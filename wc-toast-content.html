@@ -1,0 +1,22 @@
+<body>
+  <template>
+    <style>
+      :host {
+        --wc-toast-content-color: #000;
+        --wc-toast-content-margin: 4px 10px;
+        --wc-toast-content-font-family: sans-serif;
+        --wc-toast-content-font-size: 16px;
+
+        display: flex;
+        justify-content: center;
+        flex: 1 1 auto;
+        margin: var(--wc-toast-content-margin);
+        color: var(--wc-toast-content-color);
+        font-family: var(--wc-toast-content-font-family);
+        font-size: var(--wc-toast-content-font-size);
+      }
+    </style>
+    <slot name="message"></slot>
+    <slot name="content"></slot>
+  </template>
+</body>
