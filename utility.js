@@ -1,4 +1,15 @@
 /**
+ * Generate an id
+ * @returns {string} id
+ */
+export const generateId = (() => {
+  let count = 0;
+  return () => {
+    return (++count).toString();
+  };
+})();
+
+/**
  * Load HTML file from specified path
  * @param {string} path
  * @returns {HTMLDocument}
