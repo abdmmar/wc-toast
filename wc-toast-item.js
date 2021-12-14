@@ -4,7 +4,9 @@ export default class WCToastItem extends HTMLElement {
   constructor() {
     super();
     this.EXIT_ANIMATION_DURATION = 350;
+    this.createdAt = new Date();
   }
+
   connectedCallback() {
     loadHTML('./wc-toast-item.html')
       .then((html) => {
@@ -12,7 +14,8 @@ export default class WCToastItem extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.append(template.content.cloneNode(true));
 
-        this.duration = this.getAttribute('duration') || 4000;
+        this.type = this.getAttribute('type') || 'blank';
+        this.duration = this.getAttribute('duration') || this.getDurationByType(this.type);
 
         setTimeout(() => {
           this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
@@ -23,5 +26,33 @@ export default class WCToastItem extends HTMLElement {
         }, this.duration);
       })
       .catch((err) => console.error(err));
+  }
+
+  static get observedAttributes() {
+    return ['class'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'class' && newValue === 'dismiss') {
+      this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
+
+      setTimeout(() => {
+        this.remove();
+      }, this.EXIT_ANIMATION_DURATION);
+    }
+  }
+
+  getDurationByType(type) {
+    switch (type) {
+      case 'success':
+        return 2000;
+      case 'loading':
+        return 100000 * 60;
+      case 'error':
+      case 'blank':
+      case 'custom':
+      default:
+        return 3500;
+    }
   }
 }
