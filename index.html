@@ -12,6 +12,7 @@
         height: 100%;
         width: 100%;
         place-items: center;
+        margin: 0;
       }
 
       .row {
@@ -69,28 +70,10 @@
           <button class="toast">Toast</button>
         </div>
         <div class="row">
-          <wc-toast position="bottom-right"> </wc-toast>
+          <wc-toast position="bottom-center"> </wc-toast>
         </div>
       </div>
     </div>
   </body>
-  <script type="text/javascript">
-    const toast = document.querySelector('.toast');
-
-    toast.addEventListener('click', () => {
-      // create wc-toast-item
-      const toastItem = document.createElement('wc-toast-item');
-      // create wc-toast-icon
-      const toastIcon = document.createElement('wc-toast-icon');
-      toastIcon.setAttribute('type', 'error');
-      //  create wc-toast-content
-      const toastContent = document.createElement('wc-toast-content');
-      toastContent.setAttribute('message', 'Auth failed');
-      // append wc-toast-icon to wc-toast-item
-      toastItem.appendChild(toastIcon);
-      toastItem.appendChild(toastContent);
-      // append wc-toast-item to wc-toast
-      document.querySelector('wc-toast').appendChild(toastItem);
-    });
-  </script>
+  <script type="module" src="./example.js"></script>
 </html>
