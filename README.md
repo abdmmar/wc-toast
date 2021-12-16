@@ -1,5 +1,7 @@
 # wc-toast
 
+Add notifications component easily using wc-toast. Vanilla JavaScript web component notification inspired by react-hot-toast
+
 ## Features
 
 - 💙 Easy to use
@@ -20,20 +22,20 @@ npm i wc-toast
 or import from CDN
 
 ```
-// UNPKG
+import { toast } from 'https://cdn.skypack.dev/wc-toast';
 ```
-
-and add it before the closing `</head>` tag in your HTML file.
 
 ## Demo
 
-[![Open WCToast demo on Stackblitz](https://camo.githubusercontent.com/449b29bcd2bc469248faeece273f4e139f92a8d03e042de6214c94e9fa63c02a/68747470733a2f2f692e696d6775722e636f6d2f767232614267412e706e67)](#)
+[![Open wc-toast demo on Stackblitz](https://camo.githubusercontent.com/449b29bcd2bc469248faeece273f4e139f92a8d03e042de6214c94e9fa63c02a/68747470733a2f2f692e696d6775722e636f6d2f767232614267412e706e67)](https://stackblitz.com/edit/js-km237v?file=index.js)
+
+or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io/wc-toast)
 
 ## Usage/Example
 
 ### Basic Usage
 
-1. Make sure you've add `wc-toast` to your app through NPM or CDN. See [#Installation](#installation) for more details.
+1. Make sure you've add `wc-toast` to your app through NPM or CDN. See [Installation](#installation) for more details.
 2. Add `wc-toast` to your app and placed it at the top.
 
    ```
@@ -44,13 +46,16 @@ and add it before the closing `</head>` tag in your HTML file.
    ```
 
 3. Start toasting! Call it from anywhere in your app.
+
    ```
+   import { toast } from 'wc-toast'
+   // or if you use CDN:
+   // import { toast } from 'https://cdn.skypack.dev/wc-toast';
+
    document.querySelector('.toast').addEventListener('click', () => {
      toast('Hello world!');
    });
    ```
-
-### Create your own toast
 
 ## Guide
 
