@@ -1,18 +1,28 @@
 import { generateId } from './utility.js';
 
+// TODO
+// - Add toast options for custom emoji and svg icon
+// - Add documentation for release to npm
+// - Add package to unpkg, sykpack, etc
+// - Publish web componente -> https://justinfagnani.com/2019/11/01/how-to-publish-web-components-to-npm/
+
 function createToast(message, type = 'blank', options) {
   const id = generateId();
 
   // create wc-toast-item
   const toastItem = document.createElement('wc-toast-item');
   toastItem.setAttribute('type', type);
-  toastItem.setAttribute('duration', options.duration);
+  toastItem.setAttribute('duration', options.duration ? options.duration : '');
   toastItem.setAttribute('data-toast-item-id', id);
 
   // create wc-toast-icon
   const toastIcon = document.createElement('wc-toast-icon');
-  toastIcon.setAttribute('type', type);
-  toastIcon.setAttribute('icon', options.icon);
+  toastIcon.setAttribute('type', options?.icon?.type ? options.icon.type : type);
+  toastIcon.setAttribute('icon', options?.icon?.content ? options.icon.content : '');
+
+  if (options?.icon?.type === 'svg') {
+    toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
+  }
 
   //  create wc-toast-content
   const toastContent = document.createElement('wc-toast-content');
@@ -33,13 +43,42 @@ function createToast(message, type = 'blank', options) {
   };
 }
 
+/**
+ * Create toast from type
+ * @param {'blank' | 'success' | 'loading' | 'error' | 'custom'} type
+ */
 function createHandler(type) {
-  return function (message, options = { icon: '', duration: '' }) {
+  /**
+   * @param {string} message
+   * @param {object} options
+   * @param {object} options.icon
+   * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
+   * @param {string} options.icon.content
+   * @param {number} options.duration
+   * @returns {string}
+   */
+  return function (message, options = { icon: { type: '', content: '' }, duration: '' }) {
     const toast = createToast(message, type, options);
     return toast.id;
   };
 }
 
+/**
+ * Author: Timo Lins
+ * License: MIT
+ * Source: https://github.com/timolins/react-hot-toast/blob/main/src/core/toast.ts
+ */
+
+/**
+ * Create blank toast
+ * @param {string} message
+ * @param {object} options
+ * @param {object} options.icon
+ * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
+ * @param {string} options.icon.content
+ * @param {number} options.duration
+ * @returns {string}
+ */
 function toast(message, options) {
   return createHandler('blank')(message, options);
 }
