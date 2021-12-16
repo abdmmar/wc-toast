@@ -13,6 +13,8 @@ export default class WCToastItem extends HTMLElement {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.append(template.content.cloneNode(true));
+        this.setAttribute('aria-live', 'polite');
+        this.setAttribute('role', 'status');
 
         this.type = this.getAttribute('type') || 'blank';
         this.duration = this.getAttribute('duration') || this.getDurationByType(this.type);
