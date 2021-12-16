@@ -70,3 +70,5 @@ export default class WCToast extends HTMLElement {
     toastContainer.style.justifyContent = horizontalStyle;
   }
 }
+
+customElements.define('wc-toast', WCToast);

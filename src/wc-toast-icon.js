@@ -55,3 +55,5 @@ export default class WCToastIcon extends HTMLElement {
     }
   }
 }
+
+customElements.define('wc-toast-icon', WCToastIcon);

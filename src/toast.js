@@ -1,20 +1,13 @@
 import { generateId } from './utility.js';
 
-// TODO
-// - Add documentation for release to npm
-// - Add package to unpkg, sykpack, etc
-// - Publish web component -> https://justinfagnani.com/2019/11/01/how-to-publish-web-components-to-npm/
-
 function createToast(message, type = 'blank', options) {
   const id = generateId();
 
-  // create wc-toast-item
   const toastItem = document.createElement('wc-toast-item');
   toastItem.setAttribute('type', type);
   toastItem.setAttribute('duration', options.duration ? options.duration : '');
   toastItem.setAttribute('data-toast-item-id', id);
 
-  // create wc-toast-icon
   const toastIcon = document.createElement('wc-toast-icon');
   toastIcon.setAttribute('type', options?.icon?.type ? options.icon.type : type);
   toastIcon.setAttribute(
@@ -28,15 +21,12 @@ function createToast(message, type = 'blank', options) {
     }, 100);
   }
 
-  //  create wc-toast-content
   const toastContent = document.createElement('wc-toast-content');
   toastContent.setAttribute('message', message);
 
-  // append wc-toast-icon to wc-toast-item
   toastItem.appendChild(toastIcon);
   toastItem.appendChild(toastContent);
 
-  // create wc-toast-close-button
   if (options.closeable) {
     const toastCloseButton = document.createElement('wc-toast-close-button');
     toastCloseButton.addEventListener('click', () => {
@@ -46,7 +36,6 @@ function createToast(message, type = 'blank', options) {
     toastItem.appendChild(toastCloseButton);
   }
 
-  // append wc-toast-item to wc-toast
   document.querySelector('wc-toast').appendChild(toastItem);
 
   return {

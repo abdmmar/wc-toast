@@ -11,3 +11,5 @@ export default class WCToastCloseButton extends HTMLElement {
       .catch((err) => console.error(err));
   }
 }
+
+customElements.define('wc-toast-close-button', WCToastCloseButton);

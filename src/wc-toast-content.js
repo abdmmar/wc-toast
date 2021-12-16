@@ -24,3 +24,5 @@ export default class WCToastContent extends HTMLElement {
     return p;
   }
 }
+
+customElements.define('wc-toast-content', WCToastContent);

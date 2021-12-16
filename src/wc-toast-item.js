@@ -66,3 +66,5 @@ export default class WCToastItem extends HTMLElement {
     }
   }
 }
+
+customElements.define('wc-toast-item', WCToastItem);
