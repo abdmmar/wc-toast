@@ -8,19 +8,9 @@
        */
 
       :host {
-        --wc-toast-item-factor: 1;
-        --wc-toast-item-margin-top: 0px;
-        --wc-toast-item-margin-bottom: 16px;
-
-        z-index: 9999;
-        left: 0px;
-        right: 0px;
         display: flex;
-        position: absolute;
+        justify-content: var(--wc-toast-item-position);
         transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);
-        margin-top: var(--wc-toast-item-margin-top);
-        margin-bottom: var(--wc-toast-item-margin-bottom);
-        justify-content: center;
       }
 
       :host > * {
@@ -69,6 +59,7 @@
 
       .wc-toast-bar {
         display: flex;
+        align-items: center;
         background: #fff;
         color: #363636;
         line-height: 1.3;
