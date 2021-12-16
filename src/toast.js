@@ -23,7 +23,9 @@ function createToast(message, type = 'blank', options) {
   );
 
   if (options?.icon?.type === 'svg') {
-    toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
+    setTimeout(() => {
+      toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
+    }, 100);
   }
 
   //  create wc-toast-content
