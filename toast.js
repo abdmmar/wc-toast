@@ -17,11 +17,16 @@ function createToast(message, type = 'blank', options) {
   // create wc-toast-icon
   const toastIcon = document.createElement('wc-toast-icon');
   toastIcon.setAttribute('type', options?.icon?.type ? options.icon.type : type);
-  toastIcon.setAttribute('icon', options?.icon?.content ? options.icon.content : '');
+  toastIcon.setAttribute(
+    'icon',
+    options?.icon?.content && options?.icon?.type === 'custom' ? options.icon.content : ''
+  );
 
   if (options?.icon?.type === 'svg') {
     toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
   }
+
+  console.log(toastIcon);
 
   //  create wc-toast-content
   const toastContent = document.createElement('wc-toast-content');
