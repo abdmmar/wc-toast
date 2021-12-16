@@ -1,8 +1,8 @@
 import { loadHTML, getTranslateValues } from './utility.js';
 
 // TODO:
+// - Add calculate toast item position when toast item is removed
 // - Add support for custom toast item position
-// - Add support for toast close button and calculate toast item position when toast item is removed
 // - Add support for custom toast item styles with custom properties
 // - Add support for dark mode
 
@@ -28,6 +28,7 @@ export default class WCToast extends HTMLElement {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.append(template.content.cloneNode(true));
+        this.setAttribute('aria-live', 'polite');
 
         this.onSlotChange = this.onSlotChange.bind(this);
         this.toastItemSlot = this.shadowRoot.querySelector('slot');
