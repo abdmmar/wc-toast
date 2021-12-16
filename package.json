@@ -7,7 +7,8 @@
   "main": "./src/index.js",
   "module": "./src/index.js",
   "scripts": {
-    "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\""
+    "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
