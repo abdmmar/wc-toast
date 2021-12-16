@@ -1,0 +1,493 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "toast",
+          "declaration": {
+            "name": "toast",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WCToast",
+          "declaration": {
+            "name": "WCToast",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WCToastItem",
+          "declaration": {
+            "name": "WCToastItem",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WCToastContent",
+          "declaration": {
+            "name": "WCToastContent",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WCToastIcon",
+          "declaration": {
+            "name": "WCToastIcon",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WCToastCloseButton",
+          "declaration": {
+            "name": "WCToastCloseButton",
+            "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "toast"
+        },
+        {
+          "kind": "function",
+          "name": "toast",
+          "parameters": [
+            {
+              "name": "message",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "text": "@param {object} options.icon\r\n * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type\r\n * @param {string} options.icon.content\r\n * @param {number} options.duration\r\n * "
+              }
+            }
+          ],
+          "description": "Create blank toast",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "toast",
+            "module": "src/toast.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utility.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "generateId",
+          "description": "Generate an id",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "loadHTML",
+          "parameters": [
+            {
+              "name": "path",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Load HTML file from specified path",
+          "return": {
+            "type": {
+              "text": "HTMLDocument"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "getNodeHeight",
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ],
+          "description": "Gets node element height",
+          "return": {
+            "type": {
+              "text": "number"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "getTranslateValues",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ],
+          "description": "Gets computed translate values",
+          "return": {
+            "type": {
+              "text": "Object"
+            }
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "generateId",
+          "declaration": {
+            "name": "generateId",
+            "module": "src/utility.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "loadHTML",
+          "declaration": {
+            "name": "loadHTML",
+            "module": "src/utility.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getNodeHeight",
+          "declaration": {
+            "name": "getNodeHeight",
+            "module": "src/utility.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getTranslateValues",
+          "declaration": {
+            "name": "getTranslateValues",
+            "module": "src/utility.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-close-button.html",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-close-button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WCToastCloseButton",
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "wc-toast-close-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "WCToastCloseButton",
+            "module": "src/wc-toast-close-button.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wc-toast-close-button",
+          "declaration": {
+            "name": "WCToastCloseButton",
+            "module": "src/wc-toast-close-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-content.html",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-content.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WCToastContent",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createMessage",
+              "parameters": [
+                {
+                  "name": "message"
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "wc-toast-content",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "WCToastContent",
+            "module": "src/wc-toast-content.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wc-toast-content",
+          "declaration": {
+            "name": "WCToastContent",
+            "module": "src/wc-toast-content.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-icon.html",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-icon.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WCToastIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createIcon",
+              "parameters": [
+                {
+                  "name": "toastType",
+                  "default": "'blank'"
+                },
+                {
+                  "name": "icon",
+                  "default": "''"
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "wc-toast-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "WCToastIcon",
+            "module": "src/wc-toast-icon.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wc-toast-icon",
+          "declaration": {
+            "name": "WCToastIcon",
+            "module": "src/wc-toast-icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-item.html",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast-item.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WCToastItem",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getDurationByType",
+              "parameters": [
+                {
+                  "name": "type"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "createdAt",
+              "default": "new Date()"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "class"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "wc-toast-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "WCToastItem",
+            "module": "src/wc-toast-item.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wc-toast-item",
+          "declaration": {
+            "name": "WCToastItem",
+            "module": "src/wc-toast-item.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast.html",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/wc-toast.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Available toast position:\r\n- top-left\r\n- top-right\r\n- top-center\r\n- bottom-left\r\n- bottom-right\r\n- bottom-center",
+          "name": "WCToast",
+          "members": [
+            {
+              "kind": "method",
+              "name": "arrangeToastPosition",
+              "parameters": [
+                {
+                  "name": "position",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This method is to arrange the toast position based on the position attribute.",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "MARGIN_ITEM",
+              "type": {
+                "text": "number"
+              },
+              "default": "16"
+            },
+            {
+              "kind": "field",
+              "name": "toastsCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "wc-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "WCToast",
+            "module": "src/wc-toast.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wc-toast",
+          "declaration": {
+            "name": "WCToast",
+            "module": "src/wc-toast.js"
+          }
+        }
+      ]
+    }
+  ]
+}

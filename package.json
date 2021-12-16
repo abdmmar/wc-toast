@@ -1,12 +1,27 @@
 {
   "name": "wc-toast",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.tech/)",
   "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "scripts": {
+    "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdmmar/wc-toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdmmar/wc-toast/issues"
+  },
+  "homepage": "https://github.com/abdmmar/wc-toast#readme",
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "0.5.7",
     "eslint": "8.4.1",
     "eslint-config-prettier": "8.3.0",
     "prettier": "2.5.1"
-  }
+  },
+  "customElements": "src/custom-elements.json"
 }
