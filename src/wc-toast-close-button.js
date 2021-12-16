@@ -1,8 +1,8 @@
 import { loadHTML } from './utility.js';
 
-export default class WCToastCloseBtn extends HTMLElement {
+export default class WCToastCloseButton extends HTMLElement {
   connectedCallback() {
-    loadHTML('./wc-toast-close-btn.html')
+    loadHTML('./src/wc-toast-close-button.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });

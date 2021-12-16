@@ -1,10 +1,9 @@
 import { generateId } from './utility.js';
 
 // TODO
-// - Add toast options for custom emoji and svg icon
 // - Add documentation for release to npm
 // - Add package to unpkg, sykpack, etc
-// - Publish web componente -> https://justinfagnani.com/2019/11/01/how-to-publish-web-components-to-npm/
+// - Publish web component -> https://justinfagnani.com/2019/11/01/how-to-publish-web-components-to-npm/
 
 function createToast(message, type = 'blank', options) {
   const id = generateId();
@@ -18,7 +17,10 @@ function createToast(message, type = 'blank', options) {
   // create wc-toast-icon
   const toastIcon = document.createElement('wc-toast-icon');
   toastIcon.setAttribute('type', options?.icon?.type ? options.icon.type : type);
-  toastIcon.setAttribute('icon', options?.icon?.content ? options.icon.content : '');
+  toastIcon.setAttribute(
+    'icon',
+    options?.icon?.content && options?.icon?.type === 'custom' ? options.icon.content : ''
+  );
 
   if (options?.icon?.type === 'svg') {
     toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
@@ -31,6 +33,16 @@ function createToast(message, type = 'blank', options) {
   // append wc-toast-icon to wc-toast-item
   toastItem.appendChild(toastIcon);
   toastItem.appendChild(toastContent);
+
+  // create wc-toast-close-button
+  if (options.closeable) {
+    const toastCloseButton = document.createElement('wc-toast-close-button');
+    toastCloseButton.addEventListener('click', () => {
+      toastItem.classList.add('dismiss-with-close-button');
+    });
+
+    toastItem.appendChild(toastCloseButton);
+  }
 
   // append wc-toast-item to wc-toast
   document.querySelector('wc-toast').appendChild(toastItem);
@@ -55,9 +67,13 @@ function createHandler(type) {
    * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
    * @param {string} options.icon.content
    * @param {number} options.duration
+   * @param {boolean} options.closeable
    * @returns {string}
    */
-  return function (message, options = { icon: { type: '', content: '' }, duration: '' }) {
+  return function (
+    message,
+    options = { icon: { type: '', content: '' }, duration: '', closeable: false }
+  ) {
     const toast = createToast(message, type, options);
     return toast.id;
   };

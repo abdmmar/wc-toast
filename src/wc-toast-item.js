@@ -1,14 +1,14 @@
 import { loadHTML } from './utility.js';
 
+const EXIT_ANIMATION_DURATION = 350;
 export default class WCToastItem extends HTMLElement {
   constructor() {
     super();
-    this.EXIT_ANIMATION_DURATION = 350;
     this.createdAt = new Date();
   }
 
   connectedCallback() {
-    loadHTML('./wc-toast-item.html')
+    loadHTML('./src/wc-toast-item.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });
@@ -24,7 +24,7 @@ export default class WCToastItem extends HTMLElement {
 
           setTimeout(() => {
             this.remove();
-          }, this.EXIT_ANIMATION_DURATION);
+          }, EXIT_ANIMATION_DURATION);
         }, this.duration);
       })
       .catch((err) => console.error(err));
@@ -35,12 +35,20 @@ export default class WCToastItem extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'class' && newValue === 'dismiss') {
-      this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
+    if (name === 'class') {
+      switch (newValue) {
+        case 'dismiss-with-close-button':
+          this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
 
-      setTimeout(() => {
-        this.remove();
-      }, this.EXIT_ANIMATION_DURATION);
+          setTimeout(() => {
+            this.remove();
+          }, EXIT_ANIMATION_DURATION);
+          break;
+        case 'dismiss':
+        default:
+          this.remove();
+          break;
+      }
     }
   }
 

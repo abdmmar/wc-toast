@@ -5,75 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Web Component Toast</title>
-    <script type="module" src="index.js"></script>
-    <style>
-      body {
-        display: grid;
-        height: 100%;
-        width: 100%;
-        place-items: center;
-        margin: 0;
-      }
-
-      .row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .column {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-      }
-    </style>
+    <script type="module" src="./src/index.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <wc-toast position="top-center"> </wc-toast>
     <div class="root">
       <div class="column">
-        <div class="row">
-          <wc-toast-icon type="success"></wc-toast-icon>
-          <wc-toast-icon type="error"></wc-toast-icon>
-          <wc-toast-icon type="loading"></wc-toast-icon>
-          <wc-toast-icon type="custom" icon="😀"></wc-toast-icon>
-          <wc-toast-icon type="svg">
-            <svg
-              slot="svg"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              width="20"
-              height="20"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              />
-            </svg>
-          </wc-toast-icon>
-          <wc-toast-icon type="blank"></wc-toast-icon>
-        </div>
-        <div class="row">
-          <wc-toast-content message="Auth failed"></wc-toast-content>
-          <wc-toast-content>
-            <p slot="content" style="background-color: turquoise"><b>Auth success</b></p>
-          </wc-toast-content>
-        </div>
-        <div class="row">
-          <button class="toast">Toast</button>
-        </div>
-        <div class="row">
-          <wc-toast position="bottom-center"> </wc-toast>
+        <h1>
+          <code>&lt;wc-toast/&gt;</code>
+        </h1>
+        <div class="toast">
+          <div class="toast-item">
+            <button class="toast-success">
+              <span>✅</span>
+              <p>Success</p>
+            </button>
+            <button class="toast-error">
+              <span>❌</span>
+              <p>Error</p>
+            </button>
+            <button class="toast-loading">
+              <span>🕙</span>
+              <p>Loading</p>
+            </button>
+            <button class="toast-blank">
+              <span>⬜</span>
+              <p>Blank</p>
+            </button>
+            <button class="toast-promise">
+              <span>⏳</span>
+              <p>Promise</p>
+            </button>
+            <button class="toast-closeable">
+              <span>✖</span>
+              <p>Closeable</p>
+            </button>
+            <button class="toast-emoji">
+              <span>👋🏻</span>
+              <p>Emoji</p>
+            </button>
+            <button class="toast-svg">
+              <span
+                ><svg
+                  slot="svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+              </span>
+              <p>Custom SVG</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </body>
-  <script type="module" src="./example.js"></script>
+  <script type="module" src="./index.js"></script>
 </html>

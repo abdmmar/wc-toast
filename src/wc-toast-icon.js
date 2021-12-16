@@ -6,7 +6,7 @@ export default class WCToastIcon extends HTMLElement {
   }
 
   connectedCallback() {
-    loadHTML('./wc-toast-icon.html')
+    loadHTML('./src/wc-toast-icon.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });
