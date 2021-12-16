@@ -8,7 +8,7 @@ export default class WCToastItem extends HTMLElement {
   }
 
   connectedCallback() {
-    loadHTML('./wc-toast-item.html')
+    loadHTML('./src/wc-toast-item.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });

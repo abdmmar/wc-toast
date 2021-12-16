@@ -26,8 +26,6 @@ function createToast(message, type = 'blank', options) {
     toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
   }
 
-  console.log(toastIcon);
-
   //  create wc-toast-content
   const toastContent = document.createElement('wc-toast-content');
   toastContent.setAttribute('message', message);

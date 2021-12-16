@@ -22,7 +22,7 @@ export default class WCToast extends HTMLElement {
   }
 
   connectedCallback() {
-    loadHTML('./wc-toast.html')
+    loadHTML('./src/wc-toast.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });

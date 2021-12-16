@@ -2,7 +2,7 @@ import { loadHTML } from './utility.js';
 
 export default class WCToastContent extends HTMLElement {
   connectedCallback() {
-    loadHTML('./wc-toast-content.html')
+    loadHTML('./src/wc-toast-content.html')
       .then((html) => {
         const template = html.body.querySelector('template');
         this.attachShadow({ mode: 'open' });
