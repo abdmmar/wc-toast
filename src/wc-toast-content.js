@@ -1,20 +1,15 @@
-import { loadHTML } from './utility.js';
-
 export default class WCToastContent extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.template = document.createElement('template');
+    this.template.innerHTML = WCToastContent.template();
+    this.shadowRoot.append(this.template.content.cloneNode(true));
+  }
+
   connectedCallback() {
-    loadHTML('./src/wc-toast-content.html')
-      .then((html) => {
-        const template = html.body.querySelector('template');
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.append(template.content.cloneNode(true));
-
-        const attribute = {
-          message: this.getAttribute('message')
-        };
-
-        this.shadowRoot.querySelector('slot[name="message"').innerHTML = attribute.message;
-      })
-      .catch((err) => console.error(err));
+    this.message = this.getAttribute('message');
+    this.shadowRoot.querySelector('slot[name="message"').innerHTML = this.message;
   }
 
   createMessage(message) {
@@ -22,6 +17,29 @@ export default class WCToastContent extends HTMLElement {
     p.style.margin = 0;
     p.innerHTML = message;
     return p;
+  }
+
+  static template() {
+    return `
+    <style>
+      :host {
+        --wc-toast-content-color: #000;
+        --wc-toast-content-margin: 4px 10px;
+        --wc-toast-content-font-family: sans-serif;
+        --wc-toast-content-font-size: 16px;
+
+        display: flex;
+        justify-content: center;
+        flex: 1 1 auto;
+        margin: var(--wc-toast-content-margin);
+        color: var(--wc-toast-content-color);
+        font-family: var(--wc-toast-content-font-family);
+        font-size: var(--wc-toast-content-font-size);
+      }
+    </style>
+    <slot name="message"></slot>
+    <slot name="content"></slot>
+    `;
   }
 }
 

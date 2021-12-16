@@ -4,6 +4,12 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src\\custom-elements.json",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/index.js",
       "declarations": [],
       "exports": [
@@ -103,122 +109,27 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/utility.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "generateId",
-          "description": "Generate an id",
-          "return": {
-            "type": {
-              "text": "string"
-            }
-          }
-        },
-        {
-          "kind": "function",
-          "name": "loadHTML",
-          "parameters": [
-            {
-              "name": "path",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "description": "Load HTML file from specified path",
-          "return": {
-            "type": {
-              "text": "HTMLDocument"
-            }
-          }
-        },
-        {
-          "kind": "function",
-          "name": "getNodeHeight",
-          "parameters": [
-            {
-              "name": "node",
-              "type": {
-                "text": "HTMLElement"
-              }
-            }
-          ],
-          "description": "Gets node element height",
-          "return": {
-            "type": {
-              "text": "number"
-            }
-          }
-        },
-        {
-          "kind": "function",
-          "name": "getTranslateValues",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "HTMLElement"
-              }
-            }
-          ],
-          "description": "Gets computed translate values",
-          "return": {
-            "type": {
-              "text": "Object"
-            }
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "generateId",
-          "declaration": {
-            "name": "generateId",
-            "module": "src/utility.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "loadHTML",
-          "declaration": {
-            "name": "loadHTML",
-            "module": "src/utility.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getNodeHeight",
-          "declaration": {
-            "name": "getNodeHeight",
-            "module": "src/utility.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getTranslateValues",
-          "declaration": {
-            "name": "getTranslateValues",
-            "module": "src/utility.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/wc-toast-close-button.html",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/wc-toast-close-button.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
           "name": "WCToastCloseButton",
+          "members": [
+            {
+              "kind": "method",
+              "name": "template",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
+            }
+          ],
           "superclass": {
             "name": "HTMLElement"
           },
@@ -247,12 +158,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/wc-toast-content.html",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/wc-toast-content.js",
       "declarations": [
         {
@@ -268,6 +173,19 @@
                   "name": "message"
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "template",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
             }
           ],
           "superclass": {
@@ -298,12 +216,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/wc-toast-icon.html",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/wc-toast-icon.js",
       "declarations": [
         {
@@ -324,6 +236,19 @@
                   "default": "''"
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "template",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
             }
           ],
           "superclass": {
@@ -354,12 +279,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/wc-toast-item.html",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/wc-toast-item.js",
       "declarations": [
         {
@@ -377,9 +296,30 @@
               ]
             },
             {
+              "kind": "method",
+              "name": "template",
+              "static": true
+            },
+            {
               "kind": "field",
               "name": "createdAt",
               "default": "new Date()"
+            },
+            {
+              "kind": "field",
+              "name": "EXIT_ANIMATION_DURATION",
+              "type": {
+                "text": "number"
+              },
+              "default": "350"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
             }
           ],
           "attributes": [
@@ -415,12 +355,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/wc-toast.html",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/wc-toast.js",
       "declarations": [
         {
@@ -447,6 +381,11 @@
               }
             },
             {
+              "kind": "method",
+              "name": "template",
+              "static": true
+            },
+            {
               "kind": "field",
               "name": "MARGIN_ITEM",
               "type": {
@@ -461,6 +400,14 @@
                 "text": "number"
               },
               "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML"
             }
           ],
           "superclass": {

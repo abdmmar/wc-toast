@@ -1,4 +1,13 @@
-import { generateId } from './utility.js';
+/**
+ * Generate an id
+ * @returns {string} id
+ */
+const generateId = (() => {
+  let count = 0;
+  return () => {
+    return (++count).toString();
+  };
+})();
 
 function createToast(message, type = 'blank', options) {
   const id = generateId();
@@ -16,9 +25,7 @@ function createToast(message, type = 'blank', options) {
   );
 
   if (options?.icon?.type === 'svg') {
-    setTimeout(() => {
-      toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
-    }, 100);
+    toastIcon.innerHTML = options?.icon?.content ? options.icon.content : '';
   }
 
   const toastContent = document.createElement('wc-toast-content');

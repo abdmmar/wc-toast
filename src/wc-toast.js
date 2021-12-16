@@ -1,5 +1,3 @@
-import { loadHTML, getTranslateValues } from './utility.js';
-
 // TODO:
 // - Add support for custom toast item styles with custom properties
 // - Add support for dark mode
@@ -19,21 +17,17 @@ export default class WCToast extends HTMLElement {
     super();
     this.MARGIN_ITEM = 16;
     this.toastsCount = 0;
+    this.attachShadow({ mode: 'open' });
+    this.template = document.createElement('template');
+    this.template.innerHTML = WCToast.template();
+    this.shadowRoot.append(this.template.content.cloneNode(true));
   }
 
   connectedCallback() {
-    loadHTML('./src/wc-toast.html')
-      .then((html) => {
-        const template = html.body.querySelector('template');
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.append(template.content.cloneNode(true));
-        this.setAttribute('aria-live', 'polite');
+    this.setAttribute('aria-live', 'polite');
+    this.position = this.getAttribute('position') || 'top-center';
 
-        this.position = this.getAttribute('position') || 'top-center';
-
-        this.arrangeToastPosition(this.position);
-      })
-      .catch((err) => console.error(err));
+    this.arrangeToastPosition(this.position);
   }
 
   /**
@@ -68,6 +62,51 @@ export default class WCToast extends HTMLElement {
     toastContainer.style.bottom = verticalStyle.bottom;
     toastContainer.style.right = scrollbarGutter.includes('stable') && '4px';
     toastContainer.style.justifyContent = horizontalStyle;
+  }
+
+  static template() {
+    return `
+    <style>
+      :host {
+        --wc-toast-item-factor: 1;
+        --wc-toast-item-position: center;
+        --wc-toast-wrapper-direction: column-reverse;
+
+        position: fixed;
+        z-index: 9999;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        pointer-events: none;
+      }
+
+      .wc-toast-container {
+        z-index: 9999;
+        left: 0;
+        right: 0;
+        display: flex;
+        position: absolute;
+      }
+
+      .wc-toast-wrapper {
+        display: flex;
+        flex-direction: var(--wc-toast-wrapper-direction);
+        justify-content: center;
+        gap: 16px;
+        transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);
+      }
+
+      .wc-toast-wrapper * {
+        pointer-events: auto;
+      }
+    </style>
+    <div class="wc-toast-container">
+      <div class="wc-toast-wrapper" aria-live="polite">
+        <slot> </slot>
+      </div>
+    </div>
+    `;
   }
 }
 
