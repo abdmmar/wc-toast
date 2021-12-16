@@ -6,6 +6,22 @@
   "type": "module",
   "main": "./src/index.js",
   "module": "./src/index.js",
+  "files": [
+    "src/index.js",
+    "src/toast.js",
+    "src/utility.js",
+    "src/wc-toast.js",
+    "src/wc-toast.html",
+    "src/wc-toast-item.js",
+    "src/wc-toast-item.html",
+    "src/wc-toast-icon.js",
+    "src/wc-toast-icon.html",
+    "src/wc-toast-content.js",
+    "src/wc-toast-content.html",
+    "src/wc-toast-close-button.js",
+    "src/wc-toast-close-button.html",
+    "src/custom-elements.json"
+  ],
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
     "test": "echo \"No test specified\""
