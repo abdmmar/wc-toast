@@ -4,12 +4,13 @@ Add notifications component easily using wc-toast. Vanilla JavaScript web compon
 
 ## Features
 
-- 💙 Easy to use
+- ✍🏻 Easy to use
 - 👋🏻 Emoji Support
 - 🔵 SVG Support
 - 🎨 Customizable
 - 🚥 Promise API
 - ✅ Accessible
+- 💙 Dark Mode
 
 ## Installation
 
@@ -61,25 +62,97 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 
 ### Styling
 
-Custom styling through custom properties
+You can customize style of wc-toast-item through custom properties
 
 #### Default
 
+##### wc-toast
+
 ```
-  --wc-toast-item-background: #ffffff;
+--wc-toast-factor: 1;
+--wc-toast-position: center;
+--wc-toast-direction: column-reverse;
+```
+
+##### wc-toast-item
+
+```
+--wc-toast-background: #fff;
+--wc-toast-max-width: 350px;
+--wc-toast-stroke: #2a2a32;
+--wc-toast-color: #000;
+--wc-toast-font-family: 'Roboto', sans-serif;
+--wc-toast-font-size: 16px;
+--wc-toast-border-radius: 8px;
+--wc-toast-content-margin: 4px 10px;
 ```
 
 ## API
 
 #### toast()
 
+```
+toast(
+   message: string,
+   options: {
+      icon: {
+        type: 'success' | 'loading' | 'error' | 'custom' | 'svg';
+        content: string;
+   };
+   duration: number | 4000;
+   theme: {
+      type: 'light' | 'dark' | 'custom';
+      style: {
+         background: string;
+         color: string;
+         stroke: string;
+      };
+   };
+})
+```
+
 #### wc-toast
+
+```
+<wc-toast position="top-left | top-right | top-center | bottom-left | bottom-right | bottom-center">
+   <slot></slot>
+</wc-toast>
+```
 
 #### wc-toast-item
 
+```
+<wc-toast-item
+   type="success | loading | error | blank | custom"
+   theme="light | dark | custom"
+   duration="number | 3500 | 6000000">
+   <slot></slot>
+</wc-toast-item>
+```
+
 #### wc-toast-icon
 
+```
+<wc-toast-icon icon="string" type="success | loading | error | blank | custom">
+   <slot name="svg"></slot>
+</wc-toast-icon>
+```
+
 #### wc-toast-content
+
+```
+<wc-toast-content message="string">
+   <slot name="message"></slot>
+   <slot name="content"></slot>
+</wc-toast-content>
+
+```
+
+#### wc-toast-close-button
+
+```
+<wc-toast-close-button></wc-toast-close-button>
+```
 
 ## Contributing
 
