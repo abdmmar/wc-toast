@@ -206,6 +206,12 @@ export default class WCToastIcon extends HTMLElement {
         border-right-color: #616161;
         animation: rotate 1s linear infinite;
       }
+
+      @media (prefers-color-scheme: dark) {
+        ::slotted(svg) {
+          stroke: var(--wc-toast-stroke, #fff);
+        }
+      }
     </style>
     <slot name="svg"></slot>
     `;

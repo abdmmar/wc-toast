@@ -1,8 +1,3 @@
-// TODO:
-// - Add support for custom toast item styles with custom properties
-// - Add support for dark mode
-//-  Add support for update toast to use in toast.promise()
-
 /**
  * Available toast position:
  * - top-left
@@ -24,6 +19,7 @@ export default class WCToast extends HTMLElement {
   }
 
   connectedCallback() {
+    this.setAttribute('role', 'status');
     this.setAttribute('aria-live', 'polite');
     this.position = this.getAttribute('position') || 'top-center';
 
@@ -52,9 +48,9 @@ export default class WCToast extends HTMLElement {
     const css = window.getComputedStyle(document.querySelector('html'));
     const scrollbarGutter = css.getPropertyValue('scrollbar-gutter');
 
-    this.style.setProperty('--wc-toast-item-factor', factor);
-    this.style.setProperty('--wc-toast-item-position', horizontalStyle);
-    this.style.setProperty('--wc-toast-wrapper-direction', toastWrapperDirection);
+    this.style.setProperty('--wc-toast-factor', factor);
+    this.style.setProperty('--wc-toast-position', horizontalStyle);
+    this.style.setProperty('--wc-toast-direction', toastWrapperDirection);
 
     const toastContainer = this.shadowRoot.querySelector('.wc-toast-container');
 
@@ -68,9 +64,9 @@ export default class WCToast extends HTMLElement {
     return `
     <style>
       :host {
-        --wc-toast-item-factor: 1;
-        --wc-toast-item-position: center;
-        --wc-toast-wrapper-direction: column-reverse;
+        --wc-toast-factor: 1;
+        --wc-toast-position: center;
+        --wc-toast-direction: column-reverse;
 
         position: fixed;
         z-index: 9999;
@@ -91,7 +87,7 @@ export default class WCToast extends HTMLElement {
 
       .wc-toast-wrapper {
         display: flex;
-        flex-direction: var(--wc-toast-wrapper-direction);
+        flex-direction: var(--wc-toast-direction);
         justify-content: center;
         gap: 16px;
         transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);

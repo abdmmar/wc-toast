@@ -16,6 +16,15 @@ function createToast(message, type = 'blank', options) {
   toastItem.setAttribute('type', type);
   toastItem.setAttribute('duration', options.duration ? options.duration : '');
   toastItem.setAttribute('data-toast-item-id', id);
+  toastItem.setAttribute('theme', options?.theme?.type ? options.theme.type : 'light');
+
+  if (options?.theme?.type === 'custom' && options?.theme?.style) {
+    const { background, stroke, color } = options.theme.style;
+
+    toastItem.style.setProperty('--wc-toast-background', background);
+    toastItem.style.setProperty('--wc-toast-stroke', stroke);
+    toastItem.style.setProperty('--wc-toast-color', color);
+  }
 
   const toastIcon = document.createElement('wc-toast-icon');
   toastIcon.setAttribute('type', options?.icon?.type ? options.icon.type : type);
@@ -58,19 +67,14 @@ function createToast(message, type = 'blank', options) {
  * @param {'blank' | 'success' | 'loading' | 'error' | 'custom'} type
  */
 function createHandler(type) {
-  /**
-   * @param {string} message
-   * @param {object} options
-   * @param {object} options.icon
-   * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
-   * @param {string} options.icon.content
-   * @param {number} options.duration
-   * @param {boolean} options.closeable
-   * @returns {string}
-   */
   return function (
     message,
-    options = { icon: { type: '', content: '' }, duration: '', closeable: false }
+    options = {
+      icon: { type: '', content: '' },
+      duration: '',
+      closeable: false,
+      theme: { type: 'light', style: { background: '', color: '', stroke: '' } }
+    }
   ) {
     const toast = createToast(message, type, options);
     return toast.id;
@@ -91,6 +95,12 @@ function createHandler(type) {
  * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
  * @param {string} options.icon.content
  * @param {number} options.duration
+ * @param {object} options.theme
+ * @param {'light' | 'dark' | 'custom'} options.theme.type
+ * @param {object} options.theme.style
+ * @param {string} options.theme.style.background
+ * @param {string} options.theme.style.color
+ * @param {string} options.theme.style.stroke
  * @returns {string}
  */
 function toast(message, options) {

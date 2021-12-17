@@ -16,7 +16,7 @@ export default class WCToastCloseButton extends HTMLElement {
         height: 20px;
         border-radius: 2px;
         border: 1px solid #dadce0;
-        background: #f9fafb;
+        background: var(--wc-toast-background);
         position: relative;
         cursor: pointer;
         display: flex;
@@ -24,11 +24,13 @@ export default class WCToastCloseButton extends HTMLElement {
         align-items: center;
         margin-left: 5px;
       }
+
+      svg {
+        stroke: var(--wc-toast-stroke, #2a2a32);
+      }
     </style>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
     >

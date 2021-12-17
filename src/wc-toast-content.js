@@ -23,18 +23,13 @@ export default class WCToastContent extends HTMLElement {
     return `
     <style>
       :host {
-        --wc-toast-content-color: #000;
-        --wc-toast-content-margin: 4px 10px;
-        --wc-toast-content-font-family: sans-serif;
-        --wc-toast-content-font-size: 16px;
-
         display: flex;
         justify-content: center;
         flex: 1 1 auto;
         margin: var(--wc-toast-content-margin);
-        color: var(--wc-toast-content-color);
-        font-family: var(--wc-toast-content-font-family);
-        font-size: var(--wc-toast-content-font-size);
+        color: var(--wc-toast-color, #000);
+        font-family: var(--wc-toast-font-family);
+        font-size: var(--wc-toast-font-size);
       }
     </style>
     <slot name="message"></slot>
