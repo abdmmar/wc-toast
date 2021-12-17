@@ -66,3 +66,14 @@ document.querySelector('.toast-svg').addEventListener('click', () => {
 document.querySelector('.toast-emoji').addEventListener('click', () => {
   toast('Hallooo', { icon: { type: 'custom', content: '👋🏻' } });
 });
+
+document.querySelector('.toast-dark').addEventListener('click', () => {
+  toast('❤ Dark mode', { theme: { type: 'dark' } });
+});
+
+document.querySelector('.toast-custom-style').addEventListener('click', () => {
+  toast('Wohooo', {
+    icon: { type: 'custom', content: '🎉' },
+    theme: { type: 'custom', style: { background: 'royalblue', color: 'white' } }
+  });
+});
