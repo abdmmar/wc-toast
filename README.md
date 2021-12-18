@@ -5,7 +5,7 @@ Add notifications component easily using wc-toast. Vanilla JavaScript web compon
 ## Features
 
 - ✍🏻 **Easy to use**
-- 🌏 **Use anywhere you like** - _[React](https://stackblitz.com/edit/react-ts-wp4wxh?file=index.tsx)? [Vue](https://stackblitz.com/edit/vue-ob3n7x?file=src%2FApp.vue)? [Svelte](https://stackblitz.com/edit/vitejs-vite-y98sm9?file=src%2FApp.svelte&terminal=dev)? Everywhere!_
+- 🌏 **Use anywhere you like** - _[React][react-wc-toast]? [Vue][vue-wc-toast]? [Svelte][svelte-wc-toast]? Everywhere!_
 - 👋🏻 **Emoji and SVG Support**
 - 🎨 **Customizable**
 - 🚥 **Promise API**
@@ -61,9 +61,13 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 
 ### Example
 
-- [Usage with React](https://stackblitz.com/edit/react-ts-wp4wxh?file=index.tsx)
-- [Usage with Vue 3](https://stackblitz.com/edit/vue-ob3n7x?file=src%2FApp.vue)
-- [Usage with Svelte](https://stackblitz.com/edit/vitejs-vite-y98sm9?file=src%2FApp.svelte&terminal=dev)
+- [Usage with React][react-wc-toast]
+- [Usage with Vue 3][vue-wc-toast]
+- [Usage with Svelte][svelte-wc-toast]
+
+[react-wc-toast]: https://stackblitz.com/edit/react-ts-wp4wxh?file=index.tsx
+[vue-wc-toast]: https://stackblitz.com/edit/vue-ob3n7x?file=src%2FApp.vue
+[svelte-wc-toast]: https://stackblitz.com/edit/vitejs-vite-y98sm9?file=src%2FApp.svelte&terminal=dev
 
 ## Guide
 
