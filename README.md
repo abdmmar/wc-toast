@@ -4,13 +4,14 @@ Add notifications component easily using wc-toast. Vanilla JavaScript web compon
 
 ## Features
 
-- ✍🏻 Easy to use
-- 👋🏻 Emoji Support
-- 🔵 SVG Support
-- 🎨 Customizable
-- 🚥 Promise API
-- ✅ Accessible
-- 💙 Dark Mode
+- ✍🏻 **Easy to use**
+- 🌏 **Use anywhere you like** - _[React](https://stackblitz.com/edit/react-ts-wp4wxh?file=index.tsx)? [Vue](https://stackblitz.com/edit/vue-ob3n7x?file=src%2FApp.vue)? [Svelte](https://stackblitz.com/edit/vitejs-vite-y98sm9?file=src%2FApp.svelte&terminal=dev)? Everywhere!_
+- 👋🏻 **Emoji and SVG Support**
+- 🎨 **Customizable**
+- 🚥 **Promise API**
+- ✅ **Accessible** - _Tested using Windows 10 Narrator_
+- 🍃 **Lightweight** - _Only ~3.6KB Minified+Gzipped including styles_
+- 💙 **Dark Mode**
 
 ## Installation
 
@@ -32,7 +33,7 @@ import { toast } from 'https://cdn.skypack.dev/wc-toast';
 
 or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io/wc-toast)
 
-## Usage/Example
+## Usage and Example
 
 ### Basic Usage
 
@@ -42,7 +43,7 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
    ```
    <body>
       <wc-toast></wc-toast>
-      <button class="toast">
+      <button class="toast"></button>
    </body>
    ```
 
@@ -58,6 +59,12 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
    });
    ```
 
+### Example
+
+- [Usage with React](https://stackblitz.com/edit/react-ts-wp4wxh?file=index.tsx)
+- [Usage with Vue 3](https://stackblitz.com/edit/vue-ob3n7x?file=src%2FApp.vue)
+- [Usage with Svelte](https://stackblitz.com/edit/vitejs-vite-y98sm9?file=src%2FApp.svelte&terminal=dev)
+
 ## Guide
 
 ### Styling
@@ -65,14 +72,6 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 You can customize style of wc-toast-item through custom properties
 
 #### Default
-
-##### wc-toast
-
-```
---wc-toast-factor: 1;
---wc-toast-position: center;
---wc-toast-direction: column-reverse;
-```
 
 ##### wc-toast-item
 
@@ -145,7 +144,6 @@ toast(
    <slot name="message"></slot>
    <slot name="content"></slot>
 </wc-toast-content>
-
 ```
 
 #### wc-toast-close-button
