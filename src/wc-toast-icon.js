@@ -15,7 +15,7 @@ export default class WCToastIcon extends HTMLElement {
 
     this.icon =
       this.icon != null ? this.createIcon(this.type, this.icon) : this.createIcon(this.type);
-
+    this.setAttribute('aria-hidden', 'true');
     this.shadowRoot.appendChild(this.icon);
   }
 
