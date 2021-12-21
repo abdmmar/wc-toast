@@ -60,7 +60,7 @@ export default class WCToastIcon extends HTMLElement {
       :host {
         display: flex;
         align-self: flex-start;
-        margin-block: 4px;
+        margin-block: 4px !important;
       }
 
       @keyframes circle-animation {

@@ -26,7 +26,7 @@ export default class WCToastContent extends HTMLElement {
         display: flex;
         justify-content: center;
         flex: 1 1 auto;
-        margin: var(--wc-toast-content-margin);
+        margin: var(--wc-toast-content-margin) !important;
         color: var(--wc-toast-color, #000);
         font-family: var(--wc-toast-font-family);
         font-size: var(--wc-toast-font-size);
