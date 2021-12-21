@@ -26,6 +26,17 @@ export default class WCToast extends HTMLElement {
     this.arrangeToastPosition(this.position);
   }
 
+  static get observedAttributes() {
+    return ['position'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'position') {
+      this.position = newValue;
+      this.arrangeToastPosition(this.position);
+    }
+  }
+
   /**
    * This method is to arrange the toast position based on the position attribute.
    * @param {string} position
@@ -88,7 +99,7 @@ export default class WCToast extends HTMLElement {
       .wc-toast-wrapper {
         display: flex;
         flex-direction: var(--wc-toast-direction);
-        justify-content: center;
+        justify-content: flex-end;
         gap: 16px;
         transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);
       }
