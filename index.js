@@ -1,5 +1,11 @@
 import { toast } from './src/index.js';
 
+document.querySelector('.toast-cta').addEventListener('click', () => {
+  toast('Here we go!', {
+    icon: { type: 'custom', content: '🎉' }
+  });
+});
+
 document.querySelector('.toast-closeable').addEventListener('click', () => {
   toast('What!', { closeable: true });
 });

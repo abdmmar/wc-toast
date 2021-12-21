@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Web Component Toast</title>
+    <title>wc-toast • Notifications for everyone</title>
     <script type="module" src="./src/index.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,68 +12,120 @@
     <wc-toast position="top-center"> </wc-toast>
     <div class="root">
       <div class="column">
-        <h1>
-          <code>&lt;wc-toast/&gt;</code>
-        </h1>
-        <div class="toast">
-          <div class="toast-item">
-            <button class="toast-success">
-              <span aria-hidden="true">✅</span>
-              <p>Success</p>
-            </button>
-            <button class="toast-error">
-              <span aria-hidden="true">❌</span>
-              <p>Error</p>
-            </button>
-            <button class="toast-loading">
-              <span aria-hidden="true">🕙</span>
-              <p>Loading</p>
-            </button>
-            <button class="toast-blank">
-              <span aria-hidden="true">⬜</span>
-              <p>Blank</p>
-            </button>
-            <button class="toast-promise">
-              <span aria-hidden="true">⏳</span>
-              <p>Promise</p>
-            </button>
-            <button class="toast-closeable">
-              <span aria-hidden="true">✖</span>
-              <p>Closeable</p>
-            </button>
-            <button class="toast-emoji">
-              <span aria-hidden="true">👋🏻</span>
-              <p>Emoji</p>
-            </button>
-            <button class="toast-svg">
-              <span aria-hidden="true"
-                ><svg
-                  slot="svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  width="20"
-                  height="20"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
-              </span>
-              <p>Custom SVG</p>
-            </button>
-            <button class="toast-dark">
-              <span aria-hidden="true">❤</span>
-              <p>Dark Mode</p>
-            </button>
-            <button class="toast-custom-style">
-              <span aria-hidden="true">🎨</span>
-              <p>Custom style</p>
-            </button>
+        <header class="column">
+          <h1 class="title">wc-toast</h1>
+          <p class="subtitle">Notifications component for everyone</p>
+        </header>
+        <div class="container cta">
+          <button class="toast-cta">
+            <span aria-hidden="true">🎉</span>
+            <p>Get a toast!</p>
+          </button>
+          <a class="a-button" href="https://github.com/abdmmar/wc-toast" target="_blank">
+            <span aria-hidden="true">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g id="brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="github" fill="#000000">
+                    <path
+                      d="M12,2 C6.475,2 2,6.475 2,12 C2,16.425 4.8625,20.1625 8.8375,21.4875 C9.3375,21.575 9.525,21.275 9.525,21.0125 C9.525,20.775 9.5125,19.9875 9.5125,19.15 C7,19.6125 6.35,18.5375 6.15,17.975 C6.0375,17.6875 5.55,16.8 5.125,16.5625 C4.775,16.375 4.275,15.9125 5.1125,15.9 C5.9,15.8875 6.4625,16.625 6.65,16.925 C7.55,18.4375 8.9875,18.0125 9.5625,17.75 C9.65,17.1 9.9125,16.6625 10.2,16.4125 C7.975,16.1625 5.65,15.3 5.65,11.475 C5.65,10.3875 6.0375,9.4875 6.675,8.7875 C6.575,8.5375 6.225,7.5125 6.775,6.1375 C6.775,6.1375 7.6125,5.875 9.525,7.1625 C10.325,6.9375 11.175,6.825 12.025,6.825 C12.875,6.825 13.725,6.9375 14.525,7.1625 C16.4375,5.8625 17.275,6.1375 17.275,6.1375 C17.825,7.5125 17.475,8.5375 17.375,8.7875 C18.0125,9.4875 18.4,10.375 18.4,11.475 C18.4,15.3125 16.0625,16.1625 13.8375,16.4125 C14.2,16.725 14.5125,17.325 14.5125,18.2625 C14.5125,19.6 14.5,20.675 14.5,21.0125 C14.5,21.275 14.6875,21.5875 15.1875,21.4875 C19.1375,20.1625 22,16.4125 22,12 C22,6.475 17.525,2 12,2 L12,2 Z"
+                      id="Shape"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <p>Github</p>
+          </a>
+        </div>
+        <div class="column toast">
+          <h3 class="toast-title">Examples</h3>
+          <div class="container toast-item-container">
+            <ul class="toast-item">
+              <li>
+                <button class="toast-success">
+                  <span aria-hidden="true">✅</span>
+                  <p>Success</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-error">
+                  <span aria-hidden="true">❌</span>
+                  <p>Error</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-loading">
+                  <span aria-hidden="true">🕙</span>
+                  <p>Loading</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-blank">
+                  <span aria-hidden="true">⬜</span>
+                  <p>Blank</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-promise">
+                  <span aria-hidden="true">⏳</span>
+                  <p>Promise</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-closeable">
+                  <span aria-hidden="true">✖</span>
+                  <p>Closeable</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-emoji">
+                  <span aria-hidden="true">👋🏻</span>
+                  <p>Emoji</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-svg">
+                  <span aria-hidden="true"
+                    ><svg
+                      slot="svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      width="20"
+                      height="20"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                      />
+                    </svg>
+                  </span>
+                  <p>Custom SVG</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-dark">
+                  <span aria-hidden="true">❤</span>
+                  <p>Dark Mode</p>
+                </button>
+              </li>
+              <li>
+                <button class="toast-custom-style">
+                  <span aria-hidden="true">🎨</span>
+                  <p>Custom style</p>
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
