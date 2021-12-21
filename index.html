@@ -44,88 +44,133 @@
             <p>Github</p>
           </a>
         </div>
-        <div class="column toast">
-          <h3 class="toast-title">Examples</h3>
-          <div class="container toast-item-container">
-            <ul class="toast-item">
-              <li>
-                <button class="toast-success">
-                  <span aria-hidden="true">✅</span>
-                  <p>Success</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-error">
-                  <span aria-hidden="true">❌</span>
-                  <p>Error</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-loading">
-                  <span aria-hidden="true">🕙</span>
-                  <p>Loading</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-blank">
-                  <span aria-hidden="true">⬜</span>
-                  <p>Blank</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-promise">
-                  <span aria-hidden="true">⏳</span>
-                  <p>Promise</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-closeable">
-                  <span aria-hidden="true">✖</span>
-                  <p>Closeable</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-emoji">
-                  <span aria-hidden="true">👋🏻</span>
-                  <p>Emoji</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-svg">
-                  <span aria-hidden="true"
-                    ><svg
-                      slot="svg"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      width="20"
-                      height="20"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                      />
-                    </svg>
-                  </span>
-                  <p>Custom SVG</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-dark">
-                  <span aria-hidden="true">❤</span>
-                  <p>Dark Mode</p>
-                </button>
-              </li>
-              <li>
-                <button class="toast-custom-style">
-                  <span aria-hidden="true">🎨</span>
-                  <p>Custom style</p>
-                </button>
-              </li>
-            </ul>
+        <div class="row examples">
+          <div class="column toast">
+            <h3 class="toast-title">Examples</h3>
+            <div class="container toast-item-container">
+              <ul class="toast-items">
+                <li>
+                  <button class="toast-success">
+                    <span aria-hidden="true">✅</span>
+                    <p>Success</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-error">
+                    <span aria-hidden="true">❌</span>
+                    <p>Error</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-loading">
+                    <span aria-hidden="true">🕙</span>
+                    <p>Loading</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-blank">
+                    <span aria-hidden="true">⬜</span>
+                    <p>Blank</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-promise">
+                    <span aria-hidden="true">⏳</span>
+                    <p>Promise</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-closeable">
+                    <span aria-hidden="true">✖</span>
+                    <p>Closeable</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-emoji">
+                    <span aria-hidden="true">👋🏻</span>
+                    <p>Emoji</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-svg">
+                    <span aria-hidden="true"
+                      ><svg
+                        slot="svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        width="20"
+                        height="20"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                        />
+                      </svg>
+                    </span>
+                    <p>Custom SVG</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-dark">
+                    <span aria-hidden="true">❤</span>
+                    <p>Dark Mode</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-custom-style">
+                    <span aria-hidden="true">🎨</span>
+                    <p>Custom style</p>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="column position">
+            <h3 class="toast-title">Change Positions</h3>
+            <div class="container">
+              <ul class="toast-positions">
+                <li>
+                  <button class="toast-position-top-left">
+                    <span aria-hidden="true">↖</span>
+                    <p>top-left</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-position-top-center">
+                    <span aria-hidden="true">↑</span>
+                    <p>top-center</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-position-top-right">
+                    <span aria-hidden="true">↗</span>
+                    <p>top-right</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-position-bottom-left">
+                    <span aria-hidden="true">↙</span>
+                    <p>bottom-left</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-position-bottom-center">
+                    <span aria-hidden="true">↓</span>
+                    <p>bottom-center</p>
+                  </button>
+                </li>
+                <li>
+                  <button class="toast-position-bottom-right">
+                    <span aria-hidden="true">↘</span>
+                    <p>bottom-right</p>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -13,6 +13,10 @@ body {
   font-family: 'Inter', 'Roboto', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 .root {
   height: 100vh;
   display: grid;
@@ -24,6 +28,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -32,6 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -94,17 +100,27 @@ button p {
   font-size: 14px;
 }
 
-.toast {
+.examples {
+  align-items: flex-start;
+}
+
+.toast,
+.position {
   margin-block: 32px;
 }
 
-.toast-item {
+.toast-items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 15px;
-  list-style: none;
 }
 
 .toast-title {
   margin: 0;
+}
+
+.toast-positions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
 }
