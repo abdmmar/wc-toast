@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
-    "test": "echo \"No test specified\""
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,10 @@
   "homepage": "https://github.com/abdmmar/wc-toast#readme",
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "0.5.7",
+    "ava": "3.15.0",
     "eslint": "8.4.1",
     "eslint-config-prettier": "8.3.0",
+    "happy-dom": "2.25.1",
     "prettier": "2.5.1"
   },
   "customElements": "src/custom-elements.json"
