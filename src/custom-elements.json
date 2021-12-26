@@ -115,6 +115,13 @@
           "kind": "class",
           "description": "",
           "name": "WCToastCloseButton",
+          "cssProperties": [
+            {
+              "description": "stroke. Default is #2a2a32;",
+              "name": "--wc-toast-stroke",
+              "default": "#2a2a32"
+            }
+          ],
           "members": [
             {
               "kind": "method",
@@ -134,6 +141,7 @@
             "name": "HTMLElement"
           },
           "tagName": "wc-toast-close-button",
+          "summary": "- button to dismiss toast item",
           "customElement": true
         }
       ],
@@ -164,6 +172,34 @@
           "kind": "class",
           "description": "",
           "name": "WCToastContent",
+          "cssProperties": [
+            {
+              "description": "margin of toast content",
+              "name": "--wc-toast-content-margin",
+              "default": "'4px 10px'"
+            },
+            {
+              "description": "color. Default is #000",
+              "name": "--wc-toast-color",
+              "default": "\"#000\""
+            },
+            {
+              "description": "font-family. Default is 'Roboto', 'Amiri', sans-serif;",
+              "name": "--wc-toast-font-family",
+              "default": "\"'Roboto', 'Amiri', sans-serif\""
+            },
+            {
+              "description": "font-size. Default is 16px",
+              "name": "--wc-toast-font-size",
+              "default": "\"16px\""
+            }
+          ],
+          "slots": [
+            {
+              "description": "add your custom content such as HTMLElement to toast item",
+              "name": "content"
+            }
+          ],
           "members": [
             {
               "kind": "method",
@@ -179,10 +215,20 @@
               "name": "innerHTML"
             }
           ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "message to be displayed in toast item",
+              "name": "message"
+            }
+          ],
           "superclass": {
             "name": "HTMLElement"
           },
           "tagName": "wc-toast-content",
+          "summary": "- message or content to be displayed in toast item",
           "customElement": true
         }
       ],
@@ -213,6 +259,12 @@
           "kind": "class",
           "description": "",
           "name": "WCToastIcon",
+          "slots": [
+            {
+              "description": "Put your custom svg icon here",
+              "name": "svg"
+            }
+          ],
           "members": [
             {
               "kind": "method",
@@ -242,10 +294,20 @@
               "name": "innerHTML"
             }
           ],
+          "attributes": [
+            {
+              "type": {
+                "text": "'blank' | 'success' | 'loading' | 'error' | 'custom' | 'svg'"
+              },
+              "description": "type of icon",
+              "name": "type"
+            }
+          ],
           "superclass": {
             "name": "HTMLElement"
           },
           "tagName": "wc-toast-icon",
+          "summary": "- custom element to add default icon, custom emoji, or svg icon to toast items",
           "customElement": true
         }
       ],
@@ -276,6 +338,49 @@
           "kind": "class",
           "description": "",
           "name": "WCToastItem",
+          "cssProperties": [
+            {
+              "description": "Background color of toast item and toast icon. Dark theme will use #2a2a32",
+              "name": "--wc-toast-background",
+              "default": "\"#fff\""
+            },
+            {
+              "description": "Stroke color of toast icon svg item (if any). Dark theme will use #f9f9fa",
+              "name": "--wc-toast-stroke",
+              "default": "\"#2a2a32\""
+            },
+            {
+              "description": "Text color of toast item. Dark theme will use #f9f9fa",
+              "name": "--wc-toast-color",
+              "default": "\"#000\""
+            },
+            {
+              "description": "margin of toast content",
+              "name": "--wc-toast-content-margin",
+              "default": "'4px 10px'"
+            },
+            {
+              "description": "color. Default is #000",
+              "name": "--wc-toast-color",
+              "default": "\"#000\""
+            },
+            {
+              "description": "font-family. Default is 'Roboto', 'Amiri', sans-serif;",
+              "name": "--wc-toast-font-family",
+              "default": "\"'Roboto', 'Amiri', sans-serif\""
+            },
+            {
+              "description": "font-size. Default is 16px",
+              "name": "--wc-toast-font-size",
+              "default": "\"16px\""
+            }
+          ],
+          "slots": [
+            {
+              "description": "This is a default/unnamed slot",
+              "name": ""
+            }
+          ],
           "members": [
             {
               "kind": "method",
@@ -316,12 +421,20 @@
           "attributes": [
             {
               "name": "class"
+            },
+            {
+              "type": {
+                "text": "'blank' | 'success' | 'loading' | 'error' | 'custom'"
+              },
+              "description": "type of toast items",
+              "name": "type"
             }
           ],
           "superclass": {
             "name": "HTMLElement"
           },
           "tagName": "wc-toast-item",
+          "summary": "- item component that can be used to display toast notifications",
           "customElement": true
         }
       ],
@@ -350,26 +463,23 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Available toast position:\r\n- top-left\r\n- top-right\r\n- top-center\r\n- bottom-left\r\n- bottom-right\r\n- bottom-center",
+          "description": "",
           "name": "WCToast",
+          "slots": [
+            {
+              "description": "This is a default/unnamed slot",
+              "name": ""
+            }
+          ],
           "members": [
             {
               "kind": "method",
               "name": "arrangeToastPosition",
               "parameters": [
                 {
-                  "name": "position",
-                  "type": {
-                    "text": "string"
-                  }
+                  "name": "position"
                 }
-              ],
-              "description": "This method is to arrange the toast position based on the position attribute.",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
+              ]
             },
             {
               "kind": "method",
@@ -387,13 +497,18 @@
           ],
           "attributes": [
             {
-              "name": "position"
+              "name": "position",
+              "type": {
+                "text": "'top-center'|'top-left'|'top-right'|'bottom-center'|'bottom-left'|'bottom-right'"
+              },
+              "description": "toast item elements position"
             }
           ],
           "superclass": {
             "name": "HTMLElement"
           },
           "tagName": "wc-toast",
+          "summary": "container for toast items",
           "customElement": true
         }
       ],
