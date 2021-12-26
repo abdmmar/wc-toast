@@ -139,14 +139,12 @@ toast.dismiss = function (toastId) {
  * @param {string} message.success
  * @param {string} message.error
  * @param {object} options
- * @param {string} options.icon
- * @param {number} options.duration
  * @returns {Promise}
  */
 toast.promise = async function (
   promise,
   message = { loading: '', success: '', error: '' },
-  options = { icon: '', duration: '' }
+  options
 ) {
   const id = toast.loading(message.loading, { ...options });
 

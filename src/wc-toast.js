@@ -1,12 +1,3 @@
-/**
- * Available toast position:
- * - top-left
- * - top-right
- * - top-center
- * - bottom-left
- * - bottom-right
- * - bottom-center
- */
 export default class WCToast extends HTMLElement {
   constructor() {
     super();
@@ -35,14 +26,6 @@ export default class WCToast extends HTMLElement {
     }
   }
 
-  /**
-   * This method is to arrange the toast position based on the position attribute.
-   * @param {string} position
-   * @returns {void}
-   * @memberof WCToast
-   * @example
-   * this.arrangeToastPosition('top-left');
-   */
   arrangeToastPosition(position) {
     const top = position.includes('top');
     const verticalStyle = { top: top && 0, bottom: !top && 0 };
@@ -99,11 +82,9 @@ export default class WCToast extends HTMLElement {
         flex-direction: var(--wc-toast-direction);
         justify-content: flex-end;
         gap: 16px;
+        will-change: transform;
         transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);
-      }
-
-      .wc-toast-wrapper * {
-        pointer-events: auto;
+        pointer-events: none;
       }
     </style>
     <div class="wc-toast-container">

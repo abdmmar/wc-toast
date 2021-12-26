@@ -9,7 +9,7 @@ export default class WCToastContent extends HTMLElement {
 
   connectedCallback() {
     this.message = this.getAttribute('message');
-    this.shadowRoot.querySelector('slot[name="message"]').innerHTML = this.message;
+    this.shadowRoot.querySelector('slot[name="content"]').innerHTML = this.message;
   }
 
   static template() {
@@ -25,7 +25,6 @@ export default class WCToastContent extends HTMLElement {
         font-size: var(--wc-toast-font-size);
       }
     </style>
-    <slot name="message"></slot>
     <slot name="content"></slot>
     `;
   }
