@@ -9,14 +9,7 @@ export default class WCToastContent extends HTMLElement {
 
   connectedCallback() {
     this.message = this.getAttribute('message');
-    this.shadowRoot.querySelector('slot[name="message"').innerHTML = this.message;
-  }
-
-  createMessage(message) {
-    const p = document.createElement('p');
-    p.style.margin = 0;
-    p.innerHTML = message;
-    return p;
+    this.shadowRoot.querySelector('slot[name="message"]').innerHTML = this.message;
   }
 
   static template() {
