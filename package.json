@@ -16,6 +16,25 @@
     "src/wc-toast-close-button.js",
     "src/custom-elements.json"
   ],
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    },
+    "./custom-element": {
+      "import": "./src/custom-element.json",
+      "require": "./src/custom-element.json"
+    }
+  },
+  "keywords": [
+    "toast",
+    "alert",
+    "notification",
+    "wc",
+    "custom-elements",
+    "web components",
+    "javascript"
+  ],
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
     "test:watch": "jest --watch --verbose false",
