@@ -18,9 +18,10 @@ ul {
 }
 
 .root {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
+  margin-block: 100px;
 }
 
 .row {
@@ -123,4 +124,12 @@ button p {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 15px;
+}
+
+.api-viewer {
+  width: 100%;
+}
+
+.api-viewer .container {
+  width: 100%;
 }

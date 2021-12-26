@@ -7,6 +7,10 @@
     <title>wc-toast • Notifications for everyone</title>
     <script type="module" src="./src/index.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://cdn.skypack.dev/pin/api-viewer-element@v0.6.4-DHP0gOnAex8IrIHNuRMA/mode=imports,min/optimized/api-viewer-element.js"
+    ></script>
   </head>
   <body>
     <wc-toast position="top-center"> </wc-toast>
@@ -171,6 +175,12 @@
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+        <div class="column api-viewer">
+          <h3>API</h3>
+          <div class="container">
+            <api-viewer src="/src/custom-elements.json"></api-viewer>
           </div>
         </div>
       </div>
