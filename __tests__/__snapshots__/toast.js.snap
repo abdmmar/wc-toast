@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toast should add blank wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"1\\" theme=\\"light\\"><wc-toast-icon type=\\"blank\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Hello World\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add closeable wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"12\\" theme=\\"light\\"><wc-toast-icon type=\\"blank\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Closeable\\"></wc-toast-content><wc-toast-close-button></wc-toast-close-button></wc-toast-item>"`;
+
+exports[`toast should add custom style wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"11\\" theme=\\"custom\\" style=\\"--wc-toast-background:royalblue; --wc-toast-stroke:undefined; --wc-toast-color:white;\\"><wc-toast-icon type=\\"blank\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Custom Style\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add custom svg wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"10\\" theme=\\"light\\"><wc-toast-icon type=\\"svg\\" icon=\\"\\" aria-hidden=\\"true\\"><svg slot=\\"svg\\" xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" width=\\"20\\" height=\\"20\\"><path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9\\"></path></svg></wc-toast-icon><wc-toast-content message=\\"Custom SVG\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add dark mode wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"9\\" theme=\\"dark\\" style=\\"--wc-toast-background:#2a2a32; --wc-toast-stroke:#f9f9fa; --wc-toast-color:#f9f9fa;\\"><wc-toast-icon type=\\"blank\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"❤ Dark mode\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add emoji wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"blank\\" duration=\\"\\" data-toast-item-id=\\"8\\" theme=\\"light\\"><wc-toast-icon type=\\"custom\\" icon=\\"🤓\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Icon\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add error wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"error\\" duration=\\"\\" data-toast-item-id=\\"3\\" theme=\\"light\\"><wc-toast-icon type=\\"error\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Error\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add promise-error wc-toast-item to the DOM: error 1`] = `"<wc-toast-item type=\\"error\\" duration=\\"\\" data-toast-item-id=\\"7\\" theme=\\"light\\"><wc-toast-icon type=\\"error\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Authentication failed!\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add promise-error wc-toast-item to the DOM: loading 1`] = `"<wc-toast-item type=\\"loading\\" duration=\\"\\" data-toast-item-id=\\"6\\" theme=\\"light\\"><wc-toast-icon type=\\"loading\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Authenticating...\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add promise-success wc-toast-item to the DOM: loading 1`] = `"<wc-toast-item type=\\"loading\\" duration=\\"\\" data-toast-item-id=\\"4\\" theme=\\"light\\"><wc-toast-icon type=\\"loading\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Authenticating...\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add promise-success wc-toast-item to the DOM: success 1`] = `"<wc-toast-item type=\\"success\\" duration=\\"\\" data-toast-item-id=\\"5\\" theme=\\"light\\"><wc-toast-icon type=\\"success\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Authentication success!\\"></wc-toast-content></wc-toast-item>"`;
+
+exports[`toast should add success wc-toast-item to the DOM 1`] = `"<wc-toast-item type=\\"success\\" duration=\\"\\" data-toast-item-id=\\"2\\" theme=\\"light\\"><wc-toast-icon type=\\"success\\" icon=\\"\\" aria-hidden=\\"true\\"></wc-toast-icon><wc-toast-content message=\\"Success\\"></wc-toast-content></wc-toast-item>"`;
