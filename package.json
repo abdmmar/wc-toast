@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
-    "test": "ava"
+    "test:watch": "jest --watch --verbose false",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,12 +30,15 @@
   },
   "homepage": "https://github.com/abdmmar/wc-toast#readme",
   "devDependencies": {
+    "@babel/preset-env": "7.16.5",
     "@custom-elements-manifest/analyzer": "0.5.7",
-    "ava": "3.15.0",
+    "babel-jest": "27.4.5",
     "eslint": "8.4.1",
     "eslint-config-prettier": "8.3.0",
-    "happy-dom": "2.25.1",
-    "prettier": "2.5.1"
+    "jest": "26",
+    "jest-electron": "0.1.12",
+    "prettier": "2.5.1",
+    "regenerator-runtime": "0.13.9"
   },
   "customElements": "src/custom-elements.json"
 }
