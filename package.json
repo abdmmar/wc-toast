@@ -35,8 +35,10 @@
     "web components",
     "javascript"
   ],
+  "types": "./src/index.d.ts",
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
+    "generate-dts": "tsc --allowJs -d --emitDeclarationOnly src/index.js",
     "test:watch": "jest --watch --verbose false",
     "test": "jest"
   },
@@ -57,7 +59,8 @@
     "jest": "26",
     "jest-electron": "0.1.12",
     "prettier": "2.5.1",
-    "regenerator-runtime": "0.13.9"
+    "regenerator-runtime": "0.13.9",
+    "typescript": "4.5.4"
   },
   "customElements": "src/custom-elements.json"
 }
