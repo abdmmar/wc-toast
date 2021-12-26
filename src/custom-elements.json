@@ -84,7 +84,7 @@
             {
               "name": "options",
               "type": {
-                "text": "@param {object} options.icon\r\n * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type\r\n * @param {string} options.icon.content\r\n * @param {number} options.duration\r\n * "
+                "text": "@param {object} options.icon\r\n * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type\r\n * @param {string} options.icon.content\r\n * @param {number} options.duration\r\n * @param {object} options.theme\r\n * @param {'light' | 'dark' | 'custom'} options.theme.type\r\n * @param {object} options.theme.style\r\n * @param {string} options.theme.style.background\r\n * @param {string} options.theme.style.color\r\n * @param {string} options.theme.style.stroke\r\n * "
               }
             }
           ],
@@ -165,15 +165,6 @@
           "description": "",
           "name": "WCToastContent",
           "members": [
-            {
-              "kind": "method",
-              "name": "createMessage",
-              "parameters": [
-                {
-                  "name": "message"
-                }
-              ]
-            },
             {
               "kind": "method",
               "name": "template",
@@ -387,27 +378,16 @@
             },
             {
               "kind": "field",
-              "name": "MARGIN_ITEM",
-              "type": {
-                "text": "number"
-              },
-              "default": "16"
-            },
-            {
-              "kind": "field",
-              "name": "toastsCount",
-              "type": {
-                "text": "number"
-              },
-              "default": "0"
-            },
-            {
-              "kind": "field",
               "name": "template"
             },
             {
               "kind": "field",
               "name": "innerHTML"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "position"
             }
           ],
           "superclass": {
