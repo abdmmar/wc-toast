@@ -7,14 +7,7 @@
   "main": "src/index.js",
   "module": "src/index.js",
   "files": [
-    "src/index.js",
-    "src/toast.js",
-    "src/wc-toast.js",
-    "src/wc-toast-item.js",
-    "src/wc-toast-icon.js",
-    "src/wc-toast-content.js",
-    "src/wc-toast-close-button.js",
-    "src/custom-elements.json"
+    "src"
   ],
   "exports": {
     ".": {
