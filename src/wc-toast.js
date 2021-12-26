@@ -10,8 +10,6 @@
 export default class WCToast extends HTMLElement {
   constructor() {
     super();
-    this.MARGIN_ITEM = 16;
-    this.toastsCount = 0;
     this.attachShadow({ mode: 'open' });
     this.template = document.createElement('template');
     this.template.innerHTML = WCToast.template();
