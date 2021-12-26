@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wc-toast should add wc-toast with position=bottom-center to the DOM 1`] = `"<wc-toast position=\\"bottom-center\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:-1; --wc-toast-position:center; --wc-toast-direction:column;\\"></wc-toast>"`;
+
+exports[`wc-toast should add wc-toast with position=bottom-left to the DOM 1`] = `"<wc-toast position=\\"bottom-left\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:-1; --wc-toast-position:flex-start; --wc-toast-direction:column;\\"></wc-toast>"`;
+
+exports[`wc-toast should add wc-toast with position=bottom-right to the DOM 1`] = `"<wc-toast position=\\"bottom-right\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:-1; --wc-toast-position:flex-end; --wc-toast-direction:column;\\"></wc-toast>"`;
+
+exports[`wc-toast should add wc-toast with position=top-center to the DOM 1`] = `"<wc-toast position=\\"top-center\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:1; --wc-toast-position:center; --wc-toast-direction:column-reverse;\\"></wc-toast>"`;
+
+exports[`wc-toast should add wc-toast with position=top-left to the DOM 1`] = `"<wc-toast position=\\"top-left\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:1; --wc-toast-position:flex-start; --wc-toast-direction:column-reverse;\\"></wc-toast>"`;
+
+exports[`wc-toast should add wc-toast with position=top-right to the DOM 1`] = `"<wc-toast position=\\"top-right\\" role=\\"status\\" aria-live=\\"polite\\" style=\\"--wc-toast-factor:1; --wc-toast-position:flex-end; --wc-toast-direction:column-reverse;\\"></wc-toast>"`;
