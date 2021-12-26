@@ -79,7 +79,7 @@ export default class WCToastItem extends HTMLElement {
         --wc-toast-max-width: 350px;
         --wc-toast-stroke: #2a2a32;
         --wc-toast-color: #000;
-        --wc-toast-font-family: 'Roboto', sans-serif;
+        --wc-toast-font-family: 'Roboto', 'Amiri', sans-serif;
         --wc-toast-font-size: 16px;
         --wc-toast-border-radius: 8px;
         --wc-toast-content-margin: 4px 10px;
@@ -148,7 +148,7 @@ export default class WCToastItem extends HTMLElement {
         line-height: 1.3;
         will-change: transform;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
-        animation: enter-animation 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+        animation: enter-animation 0.3s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
         max-width: var(--wc-toast-max-width);
         pointer-events: auto;
         padding: 8px 10px;
@@ -156,7 +156,7 @@ export default class WCToastItem extends HTMLElement {
       }
 
       .wc-toast-bar.dismiss {
-        animation: exit-animation 0.4s forwards cubic-bezier(0.06, 0.71, 0.55, 1);
+        animation: exit-animation 0.3s forwards cubic-bezier(0.06, 0.71, 0.55, 1);
       }
 
       @media (prefers-reduced-motion: reduce) {

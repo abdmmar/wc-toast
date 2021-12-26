@@ -28,6 +28,7 @@ export default class WCToastIcon extends HTMLElement {
       case 'error':
         const errorIcon = document.createElement('div');
         errorIcon.classList.add('error-icon');
+        errorIcon.innerHTML = `<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>`;
         return errorIcon;
       case 'loading':
         const loadingIcon = document.createElement('div');
@@ -119,19 +120,7 @@ export default class WCToastIcon extends HTMLElement {
         width: 6px;
       }
 
-      .error-icon {
-        width: 20px;
-        opacity: 0;
-        height: 20px;
-        border-radius: 10px;
-        background: #ff4b4b;
-        position: relative;
-        transform: rotate(45deg);
-        animation: circle-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        animation-delay: 100ms;
-      }
-
-      @keyframes first-line-animation {
+      @keyframes slide-in {
         from {
           transform: scale(0);
           opacity: 0;
@@ -142,37 +131,24 @@ export default class WCToastIcon extends HTMLElement {
         }
       }
 
-      .error-icon::after,
-      .error-icon::before {
-        content: '';
-        animation: first-line-animation 0.15s ease-out forwards;
-        animation-delay: 150ms;
-        position: absolute;
-        border-radius: 2px;
-        opacity: 0;
-        background: #fff;
-        bottom: 9.32px;
-        left: 4px;
-        right: -1px;
-        height: 1.5px;
-        width: 12px;
+      .error-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: #ff4b4b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slide-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
       }
 
-      @keyframes secondLineAnimation {
-        from {
-          transform: scale(0) rotate(90deg);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) rotate(90deg);
-          opacity: 1;
-        }
-      }
-
-      .error-icon::before {
-        animation: secondLineAnimation 0.15s ease-out forwards;
-        animation-delay: 180ms;
-        transform: rotate(90deg);
+      .error-icon svg{
+        width: 16px;
+        padding-left: 1px;
+        height: 20px;
+        stroke: #fff;
+        animation: slide-in .2s ease-out;
+        animation-delay: 100ms;
       }
 
       @keyframes rotate {
