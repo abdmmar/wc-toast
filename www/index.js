@@ -1,4 +1,4 @@
-import { toast } from './src/index.js';
+import { toast } from '../src/index.js';
 
 (function main(param) {
   toastItems();
