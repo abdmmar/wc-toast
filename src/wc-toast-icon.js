@@ -10,12 +10,12 @@ export default class WCToastIcon extends HTMLElement {
   connectedCallback() {
     this.icon = this.getAttribute('icon');
     this.type = this.getAttribute('type') || 'blank';
+    this.setAttribute('aria-hidden', 'true');
 
     if (this.type === 'svg') return;
 
     this.icon =
       this.icon != null ? this.createIcon(this.type, this.icon) : this.createIcon(this.type);
-    this.setAttribute('aria-hidden', 'true');
     this.shadowRoot.appendChild(this.icon);
   }
 
