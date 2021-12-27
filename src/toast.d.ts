@@ -42,54 +42,9 @@ export type ToastOptions = {
  */
 declare function toast(message: string, options?: ToastOptions): string;
 declare namespace toast {
-    function loading(message: any, options?: {
-        icon: {
-            type: string;
-            content: string;
-        };
-        duration: string;
-        closeable: boolean;
-        theme: {
-            type: string;
-            style: {
-                background: string;
-                color: string;
-                stroke: string;
-            };
-        };
-    }): any;
-    function success(message: any, options?: {
-        icon: {
-            type: string;
-            content: string;
-        };
-        duration: string;
-        closeable: boolean;
-        theme: {
-            type: string;
-            style: {
-                background: string;
-                color: string;
-                stroke: string;
-            };
-        };
-    }): any;
-    function error(message: any, options?: {
-        icon: {
-            type: string;
-            content: string;
-        };
-        duration: string;
-        closeable: boolean;
-        theme: {
-            type: string;
-            style: {
-                background: string;
-                color: string;
-                stroke: string;
-            };
-        };
-    }): any;
+    function loading(message: string, options?: ToastOptions): string;
+    function success(message: string, options?: ToastOptions): string;
+    function error(message: string, options?: ToastOptions): string;
     /**
      * Dismiss toast by id
      * @param {string} id
@@ -103,13 +58,14 @@ declare namespace toast {
     /**
      * Automatically add loading toast, success or error toast in promise
      * @param {Promise} promise
+     * @param {object} message
      * @param {string} message.loading
      * @param {string} message.success
      * @param {string} message.error
      * @param {ToastOptions} [options]
      * @returns {Promise}
      */
-    function promise(promise: Promise<any>, message?: {
+    function promise(promise: Promise<any>, message: {
         loading: string;
         success: string;
         error: string;

@@ -79,15 +79,12 @@ function createToastCloseButton(toastItem) {
  * @param {'blank' | 'success' | 'loading' | 'error' | 'custom'} type
  */
 function createHandler(type) {
-  return function (
-    message,
-    options = {
-      icon: { type: '', content: '' },
-      duration: '',
-      closeable: false,
-      theme: { type: 'light', style: { background: '', color: '', stroke: '' } }
-    }
-  ) {
+  /**
+   * @param {string} message
+   * @param {ToastOptions} [options]
+   * @returns {string}
+   */
+  return function (message, options) {
     const toast = createToast(message, type, options);
     return toast.id;
   };
@@ -152,17 +149,14 @@ toast.dismiss = function (toastId) {
 /**
  * Automatically add loading toast, success or error toast in promise
  * @param {Promise} promise
+ * @param {object} message
  * @param {string} message.loading
  * @param {string} message.success
  * @param {string} message.error
  * @param {ToastOptions} [options]
  * @returns {Promise}
  */
-toast.promise = async function (
-  promise,
-  message = { loading: '', success: '', error: '' },
-  options
-) {
+toast.promise = async function (promise, message, options) {
   const id = toast.loading(message.loading, { ...options });
 
   try {
