@@ -9,7 +9,16 @@ const generateId = (function () {
   };
 })();
 
-function createToast(message, type = 'blank', options) {
+function createToast(
+  message,
+  type = 'blank',
+  options = {
+    icon: { type: '', content: '' },
+    duration: '',
+    closeable: false,
+    theme: { type: 'light', style: { background: '', color: '', stroke: '' } }
+  }
+) {
   const id = generateId();
   const toastItem = createToastItem(id, type, options);
   const toastIcon = createToastIcon(type, options);
@@ -156,7 +165,11 @@ toast.dismiss = function (toastId) {
  * @param {ToastOptions} [options]
  * @returns {Promise}
  */
-toast.promise = async function (promise, message, options) {
+toast.promise = async function (
+  promise,
+  message = { loading: '', success: '', error: '' },
+  options
+) {
   const id = toast.loading(message.loading, { ...options });
 
   try {
