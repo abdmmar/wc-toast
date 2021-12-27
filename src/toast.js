@@ -18,7 +18,7 @@ function createToast(message, type = 'blank', options) {
   toastItem.appendChild(toastIcon);
   toastItem.appendChild(toastContent);
 
-  if (options.closeable) toastItem.appendChild(createToastCloseButton());
+  if (options.closeable) toastItem.appendChild(createToastCloseButton(toastItem));
 
   document.querySelector('wc-toast').appendChild(toastItem);
 
@@ -66,7 +66,7 @@ function createToastContent(message) {
   return toastContent;
 }
 
-function createToastCloseButton() {
+function createToastCloseButton(toastItem) {
   const toastCloseButton = document.createElement('wc-toast-close-button');
   toastCloseButton.addEventListener('click', () => {
     toastItem.classList.add('dismiss-with-close-button');
