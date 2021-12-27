@@ -30,7 +30,7 @@
   ],
   "types": "./src/index.d.ts",
   "scripts": {
-    "generate-ce": "cem analyze --globs \"./src/\" --outdir \"./src/\"",
+    "generate-ce": "cem analyze --globs \"./src/wc-*.js\" --outdir \"./src/\"",
     "generate-dts": "tsc --allowJs -d --emitDeclarationOnly src/index.js",
     "test:watch": "jest --watch --verbose false",
     "test": "jest"
