@@ -1,40 +1,46 @@
 export default toast;
+export type ToastOptions = {
+    icon?: {
+        type?: string;
+        content?: string;
+    };
+    duration?: number;
+    theme?: {
+        type?: 'light' | 'dark' | 'custom';
+        style?: {
+            background?: string;
+            color?: string;
+            stroke?: string;
+        };
+    };
+    closeable?: boolean;
+};
 /**
  * Author: Timo Lins
  * License: MIT
  * Source: https://github.com/timolins/react-hot-toast/blob/main/src/core/toast.ts
  */
 /**
+ * @typedef {Object} ToastOptions
+ * @property {object} [icon]
+ * @property {string} [icon.type]
+ * @property {string} [icon.content]
+ * @property {number} [duration=3500]
+ * @property {object} [theme]
+ * @property {'light' | 'dark' | 'custom'} [theme.type="light"]
+ * @property {object} [theme.style]
+ * @property {string} [theme.style.background]
+ * @property {string} [theme.style.color]
+ * @property {string} [theme.style.stroke]
+ * @property {boolean} [closeable=false]
+ */
+/**
  * Create blank toast
  * @param {string} message
- * @param {object} options
- * @param {object} options.icon
- * @param {'success' | 'loading' | 'error' | 'custom' | 'svg'} options.icon.type
- * @param {string} options.icon.content
- * @param {number} options.duration
- * @param {object} options.theme
- * @param {'light' | 'dark' | 'custom'} options.theme.type
- * @param {object} options.theme.style
- * @param {string} options.theme.style.background
- * @param {string} options.theme.style.color
- * @param {string} options.theme.style.stroke
+ * @param {ToastOptions} [options]
  * @returns {string}
  */
-declare function toast(message: string, options: {
-    icon: {
-        type: 'success' | 'loading' | 'error' | 'custom' | 'svg';
-        content: string;
-    };
-    duration: number;
-    theme: {
-        type: 'light' | 'dark' | 'custom';
-        style: {
-            background: string;
-            color: string;
-            stroke: string;
-        };
-    };
-}): string;
+declare function toast(message: string, options?: ToastOptions): string;
 declare namespace toast {
     function loading(message: any, options?: {
         icon: {
@@ -100,12 +106,12 @@ declare namespace toast {
      * @param {string} message.loading
      * @param {string} message.success
      * @param {string} message.error
-     * @param {object} options
+     * @param {ToastOptions} [options]
      * @returns {Promise}
      */
-    function promise(promise: Promise<any>, message: {
+    function promise(promise: Promise<any>, message?: {
         loading: string;
         success: string;
         error: string;
-    }, options: any): Promise<any>;
+    }, options?: ToastOptions): Promise<any>;
 }
