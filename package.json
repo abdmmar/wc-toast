@@ -13,10 +13,6 @@
     ".": {
       "import": "./src/index.js",
       "require": "./src/index.js"
-    },
-    "./custom-elements": {
-      "import": "./src/custom-elements.json",
-      "require": "./src/custom-elements.json"
     }
   },
   "keywords": [
