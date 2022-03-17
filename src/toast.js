@@ -1,3 +1,4 @@
+import { get } from '../test/utils';
 /**
  * Generate an id
  * @returns {string} id
@@ -46,9 +47,9 @@ function createToastItem(id, type, options) {
   toastItem.setAttribute('type', type);
   toastItem.setAttribute('duration', duration ? duration : '');
   toastItem.setAttribute('data-toast-item-id', id);
-  toastItem.setAttribute('theme', theme?.type ? theme.type : 'light');
+  toastItem.setAttribute('theme', get(theme, 'type') ? theme.type : 'light');
 
-  if (theme?.type === 'custom' && theme?.style) {
+  if (get(theme, 'type') === 'custom' && get(theme, 'style')) {
     const { background, stroke, color } = theme.style;
     toastItem.style.setProperty('--wc-toast-background', background);
     toastItem.style.setProperty('--wc-toast-stroke', stroke);
@@ -62,9 +63,9 @@ function createToastIcon(type, options) {
   const { icon } = options;
   const toastIcon = document.createElement('wc-toast-icon');
 
-  toastIcon.setAttribute('type', icon?.type ? icon.type : type);
-  toastIcon.setAttribute('icon', icon?.content && icon?.type === 'custom' ? icon.content : '');
-  if (icon?.type === 'svg') toastIcon.innerHTML = icon?.content ? icon.content : '';
+  toastIcon.setAttribute('type', get(icon, 'type') ? icon.type : type);
+  toastIcon.setAttribute('icon', get(icon, 'content') && get(icon, 'type') === 'custom' ? icon.content : '');
+  if (get(icon, 'type') === 'svg') toastIcon.innerHTML = get(icon, 'content') ? icon.content : '';
 
   return toastIcon;
 }
