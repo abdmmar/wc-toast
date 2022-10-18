@@ -8,10 +8,10 @@ Development follows the [Feature Branch Workflow][feature-workflow]:
 
 1. Fork the repo
 2. Clone your fork
-3. Create a `feat/[name]` branch
-4. Implement your feature
+3. Create a branch start with `feat|fix|chore|style|refactor` to be able publish `wc-toast` as canary release. For example: `feat/requestAnimationFrame` or `fix/glitch`
+4. Implement your changes
 5. Commit the changes
-6. Create a PR to merge the feature branch
+6. Create a Pull Request (PR) from your branch to merge the changes
 7. Reference the issue in the PR
 
 [feature-workflow]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
