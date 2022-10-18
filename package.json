@@ -59,7 +59,11 @@
     "branches": [
       "main",
       "next",
-      "canary"
+      "canary",
+      {
+        "name": "/(?<type>chore|feat|feature|fix|hotfix|refactor|style)(?<scope>(?:\\([^()\r\n]*\\)|\\()?(?<breaking>!)?)(?<subject>:.*)?/gm",
+        "prerelease": true
+      }
     ]
   }
 }
