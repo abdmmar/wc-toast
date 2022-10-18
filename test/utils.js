@@ -24,5 +24,5 @@ export function getToastItemFromDOM() {
  * Source: https://stackoverflow.com/questions/44741102/how-to-make-jest-wait-for-all-asynchronous-code-to-finish-execution-before-expec
  */
 export function flushPromises() {
-  new Promise(setImmediate);
+  new Promise(process.nextTick);
 }
