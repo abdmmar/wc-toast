@@ -1,7 +1,7 @@
 {
   "name": "wc-toast",
   "version": "1.2.7",
-  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.tech/)",
+  "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.com/)",
   "license": "MIT",
   "type": "module",
   "main": "src/index.js",
@@ -24,10 +24,11 @@
     "web components",
     "javascript"
   ],
-  "types": "./src/index.d.ts",
+  "types": "./types/index.d.ts",
+  "customElements": "src/custom-elements.json",
   "scripts": {
     "generate-ce": "cem analyze --globs \"./src/wc-*.js\" --outdir \"./src/\"",
-    "generate-dts": "tsc --allowJs -d --emitDeclarationOnly src/index.js",
+    "generate-dts": "tsc",
     "test:watch": "jest --watch --verbose false",
     "test": "jest"
   },
@@ -50,6 +51,5 @@
     "prettier": "2.5.1",
     "regenerator-runtime": "0.13.9",
     "typescript": "4.5.4"
-  },
-  "customElements": "src/custom-elements.json"
+  }
 }
