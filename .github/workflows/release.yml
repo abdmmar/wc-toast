@@ -22,7 +22,7 @@ jobs:
       - name: Generate custom elements
         run: yarn generate-ce
       - name: Generate .d.ts file
-        run: yarn generete-dts
+        run: yarn generate-dts
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
