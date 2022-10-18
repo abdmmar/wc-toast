@@ -1,13 +1,14 @@
 {
   "name": "wc-toast",
-  "version": "1.2.7",
+  "version": "0.0.0-development",
   "author": "Abdullah Ammar <abd.ammar.mar@gmail.com> (https://abdmmar.com/)",
   "license": "MIT",
   "type": "module",
   "main": "src/index.js",
   "module": "src/index.js",
   "files": [
-    "src"
+    "src",
+    "types"
   ],
   "exports": {
     ".": {
@@ -30,11 +31,12 @@
     "generate-ce": "cem analyze --globs \"./src/wc-*.js\" --outdir \"./src/\"",
     "generate-dts": "tsc",
     "test:watch": "jest --watch --verbose false",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abdmmar/wc-toast.git"
+    "url": "https://github.com/abdmmar/wc-toast.git"
   },
   "bugs": {
     "url": "https://github.com/abdmmar/wc-toast/issues"
@@ -50,6 +52,14 @@
     "jest-electron": "0.1.12",
     "prettier": "2.5.1",
     "regenerator-runtime": "0.13.9",
+    "semantic-release": "^19.0.5",
     "typescript": "4.5.4"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next",
+      "canary"
+    ]
   }
 }

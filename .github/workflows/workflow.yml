@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+      - name: Setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+      - run: yarn install
+      - name: Run test
+      - run: yarn test
+      - name: Generate custom elements
+      - run: yarn generate-ce
+      - name: Generate .d.ts file
+      - run: yarn generete-dts
+      - name: Release
+        env:
+          ITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
