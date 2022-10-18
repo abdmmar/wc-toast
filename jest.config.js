@@ -1,7 +1,13 @@
 export default {
   rootDir: '.',
-  runner: 'jest-electron/runner',
-  testEnvironment: 'jest-electron/environment',
+  testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    browsers: [
+      'chrome',
+      'firefox',
+      'safari'
+    ]
+  },
   transform: {
     '^.+\\.[t|j]s?$': 'babel-jest'
   },

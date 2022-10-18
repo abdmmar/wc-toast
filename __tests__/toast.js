@@ -295,7 +295,7 @@ describe('toast', () => {
     expect(toastItem.getAttribute('data-toast-item-id')).toBe(toastItemCount.toString());
     expect(toastItem.getAttribute('theme')).toBe('custom');
     expect(toastItem.style.getPropertyValue('--wc-toast-background')).toBe(customStyle.background);
-    expect(toastItem.style.getPropertyValue('--wc-toast-stroke')).toBe('undefined');
+    expect(toastItem.style.getPropertyValue('--wc-toast-stroke')).toBe('');
     expect(toastItem.style.getPropertyValue('--wc-toast-color')).toBe(customStyle.color);
     expect(toastItem.outerHTML).toMatchSnapshot();
 
