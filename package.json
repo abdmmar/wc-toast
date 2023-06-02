@@ -12,8 +12,14 @@
   ],
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
+      "import": {
+        "types": "./types/index.d.ts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./types/index.d.ts",
+        "default": "./src/index.js"
+      }
     }
   },
   "keywords": [
@@ -52,8 +58,8 @@
     "jest-environment-jsdom": "29.2.1",
     "prettier": "2.5.1",
     "regenerator-runtime": "0.13.9",
-    "semantic-release": "^19.0.5",
-    "typescript": "4.5.4"
+    "semantic-release": "19.0.5",
+    "typescript": "5.1.3"
   },
   "release": {
     "branches": [
