@@ -42,11 +42,13 @@ function createToast(
 function createToastItem(id, type, options) {
   const { duration, theme } = options;
   const toastItem = document.createElement('wc-toast-item');
+  const isDarkTheme = window?.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersTheme = isDarkTheme?.matches ? 'dark' : 'light';
 
   toastItem.setAttribute('type', type);
   toastItem.setAttribute('duration', duration ? duration : '');
   toastItem.setAttribute('data-toast-item-id', id);
-  toastItem.setAttribute('theme', theme?.type ? theme.type : 'light');
+  toastItem.setAttribute('theme', theme?.type ? theme.type : prefersTheme);
 
   if (theme?.type === 'custom' && theme?.style) {
     const { background, stroke, color } = theme.style;

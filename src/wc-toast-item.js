@@ -116,6 +116,12 @@ export default class WCToastItem extends HTMLElement {
           --wc-toast-stroke: #f9f9fa;
           --wc-toast-color: #f9f9fa;
         }
+
+        :host([theme=light]) {
+          --wc-toast-background: #fff;
+          --wc-toast-stroke: #2a2a32;
+          --wc-toast-color: #000;
+        }
       }
 
       @keyframes enter-animation {
