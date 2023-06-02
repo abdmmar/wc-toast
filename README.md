@@ -71,6 +71,35 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 
 ## Guide
 
+### React TypeScript
+
+If you are using the `wc-toast` in a React TypeScript project, you'll need to add `wc-toast.d.ts` type definitions to ensure proper type checking.
+
+```ts
+// wc-toast.d.ts
+import { WCToast, WCToastItem, WCToastIcon, WCToastContent, WCToastCloseButton } from 'wc-toast';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'wc-toast': React.DetailedHTMLProps<React.HTMLAttributes<WCToast>, WCToast>;
+      'wc-toast-item': React.DetailedHTMLProps<React.HTMLAttributes<WCToastItem>, WCToastItem>;
+      'wc-toast-icon': React.DetailedHTMLProps<React.HTMLAttributes<WCToastIcon>, WCToastIcon>;
+      'wc-toast-content': React.DetailedHTMLProps<
+        React.HTMLAttributes<WCToastContent>,
+        WCToastContent
+      >;
+      'wc-toast-close-button': React.DetailedHTMLProps<
+        React.HTMLAttributes<WCToastCloseButton>,
+        WCToastCloseButton
+      >;
+    }
+  }
+}
+```
+
+If you are using Vite, place your `wc-toast.d.ts` inside `src/` folder
+
 ### Styling
 
 You can customize style of wc-toast-item through custom properties
@@ -79,7 +108,7 @@ You can customize style of wc-toast-item through custom properties
 
 ##### wc-toast-item
 
-```
+```css
 --wc-toast-background: #fff;
 --wc-toast-max-width: 350px;
 --wc-toast-stroke: #2a2a32;
@@ -94,7 +123,7 @@ You can customize style of wc-toast-item through custom properties
 
 #### toast()
 
-```
+```js
 toast(
    message: string,
    options: {
@@ -116,43 +145,44 @@ toast(
 
 #### wc-toast
 
-```
+```html
 <wc-toast position="top-left | top-right | top-center | bottom-left | bottom-right | bottom-center">
-   <slot></slot>
+  <slot></slot>
 </wc-toast>
 ```
 
 #### wc-toast-item
 
-```
+```html
 <wc-toast-item
-   type="success | loading | error | blank | custom"
-   theme="light | dark | custom"
-   duration="number | 3500 | 6000000">
-   <slot></slot>
+  type="success | loading | error | blank | custom"
+  theme="light | dark | custom"
+  duration="number | 3500 | 6000000"
+>
+  <slot></slot>
 </wc-toast-item>
 ```
 
 #### wc-toast-icon
 
-```
+```html
 <wc-toast-icon icon="string" type="success | loading | error | blank | custom">
-   <slot name="svg"></slot>
+  <slot name="svg"></slot>
 </wc-toast-icon>
 ```
 
 #### wc-toast-content
 
-```
+```html
 <wc-toast-content message="string">
-   <slot name="message"></slot>
-   <slot name="content"></slot>
+  <slot name="message"></slot>
+  <slot name="content"></slot>
 </wc-toast-content>
 ```
 
 #### wc-toast-close-button
 
-```
+```html
 <wc-toast-close-button></wc-toast-close-button>
 ```
 
