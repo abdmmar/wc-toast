@@ -17,13 +17,13 @@ Add notifications component easily using wc-toast. Vanilla JavaScript web compon
 
 Add from NPM
 
-```
+```bash
 npm i wc-toast
 ```
 
 or import from CDN
 
-```
+```js
 import { toast } from 'https://cdn.skypack.dev/wc-toast';
 ```
 
@@ -40,7 +40,7 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 1. Make sure you've add `wc-toast` to your app through NPM or CDN. See [Installation](#installation) for more details.
 2. Add `wc-toast` to your app and placed it at the top.
 
-   ```
+   ```html
    <body>
       <wc-toast></wc-toast>
       <button class="toast"></button>
@@ -49,7 +49,7 @@ or just try it on [https://abdmmar.github.io/wc-toast](https://abdmmar.github.io
 
 3. Start toasting! Call it from anywhere in your app.
 
-   ```
+   ```js
    import { toast } from 'wc-toast'
    // or if you use CDN:
    // import { toast } from 'https://cdn.skypack.dev/wc-toast';
