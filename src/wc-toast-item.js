@@ -37,13 +37,27 @@ export default class WCToastItem extends HTMLElement {
       this.style.setProperty('--wc-toast-color', '#f9f9fa');
     }
 
-    setTimeout(() => {
-      this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
-
+    const onClose = () => {
       setTimeout(() => {
         this.remove();
       }, this.EXIT_ANIMATION_DURATION);
-    }, this.duration);
+      this.shadowRoot.querySelector('.wc-toast-bar').classList.add('dismiss');
+    }
+    let isHover = false
+    this.addEventListener("mouseenter", () => {
+      isHover = true
+    })
+    this.addEventListener("mouseleave", () => {
+      isHover = false
+    })
+    const timer = setInterval(() => {
+      if(this.duration <= 0) {
+        clearInterval(timer)
+        onClose()
+        return
+      }
+      if(!isHover) this.duration -= 100
+    }, 100)
   }
 
   static get observedAttributes() {
