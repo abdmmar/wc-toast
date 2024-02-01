@@ -153,7 +153,6 @@ export default class WCToastIcon extends HTMLElement {
 
       .error-icon svg{
         width: 16px;
-        padding-left: 1px;
         height: 20px;
         stroke: #fff;
         animation: slide-in .2s ease-out;
