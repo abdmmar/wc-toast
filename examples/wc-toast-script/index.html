@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wc-toast using script</title>
+    <script type="module" src="./src/wc-toast/index.js"></script>
+    <style>
+      .root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .cheers {
+        border: none;
+        padding: 0.7rem 1rem;
+        color: white;
+        background-color: cornflowerblue;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <wc-toast></wc-toast>
+    <div class="root">
+      <button class="cheers">Cheers</button>
+    </div>
+  </body>
+  <script type="module">
+    import { toast } from "./src/wc-toast/index.js";
+
+    document.querySelector(".cheers").addEventListener("click", () => {
+      console.log("Cheers");
+      toast("Cheers!");
+    });
+  </script>
+  <!-- Use src if you want to separate the javascript code from the html -->
+  <!-- <script type="module" src="./index.js"></script> -->
+</html>
